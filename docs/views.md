@@ -1,7 +1,7 @@
 # View Wireframes
 
 ## New User (landing page)
-![new-user]
+![landing_page]
 
 ## New Session
 ![new-session]

@@ -3,27 +3,38 @@
 ## Rails
 ### Models
 * User
-* Blog
-* Post
+* Notebooks
+* Notes
+* Tags
+* Taggings
 
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* BlogsController (create, new, show)
-* PostsController (create, new, show)
+* API::NotebooksController (index, create, show, destroy)
+* API::NotesController (index, create, show, update, destroy)
+* API::TagsController (index, create, show, destroy)
 
 ### Views
+* root.html.erb
 * users/new.html.erb
 * session/new.html.erb
-* blogs/new.html.erb
-* blogs/show.html.erb
-* posts/show.html.erb
 
 ## Backbone
 ### Models
+* Notebook
+* Note
+* Tag
 
 ### Collections
+* Notebooks
+* Notes
+* Tags
 
 ### Views
+* NotebookIndex
+* NotebookIndexItem
+* NotebookShow
+* NoteShow
 
 ## Gems/Libraries

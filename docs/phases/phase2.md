@@ -4,23 +4,19 @@
 ### Models
 
 ### Controllers
-Api::BlogsController (create, destroy, index, show)
-Api::PostsController (create, destroy, show, update)
 
 ### Views
-* blogs/show.json.jbuilder
 
 ## Backbone
 ### Models
-* Blog (parses nested `posts` association)
-* Post
 
 ### Collections
-* Blogs
-* Posts
 
 ### Views
-* BlogShow (composite view, contains PostShow subviews)
-* PostShow
+* NotebookIndex
+* NotebookShow
+* NotebookForm
+* NoteShow
+* NoteForm
 
 ## Gems/Libraries

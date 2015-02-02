@@ -4,18 +4,21 @@
 ### Models
 
 ### Controllers
-Api::PostsController (feed)
+API::Notes (search)
 
 ### Views
-posts/feed.json.jbuilder
 
 ## Backbone
 ### Models
 
 ### Collections
-* FeedPosts
+* SearchNotes
 
 ### Views
-* FeedShow (composite view, contains PostShow subviews)
+* TagForm
+* TagShow
+* NoteSearchItem
+* SearchShow (composite view of NoteSearchItem subviews)
+
 
 ## Gems/Libraries

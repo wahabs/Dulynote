@@ -1,26 +1,18 @@
 # View Wireframes
 
+## New User (landing page)
+![new-user]
+
 ## New Session
 ![new-session]
 
-## Feed Show (landing page)
-![feed-show]
+## Notebook Index and Show (sidebars, mouseover visibility)
+![notebook-index-and-show]
 
-## Blog Show
-![blog-show]
+## Note Form and Show
+![note-form-and-show]
 
-## Post Show
-![post-show]
-
-## Post Form
-![post-form]
-
-## Search Results
-![search-results]
-
+[landing-page]: ./wireframes/new_user.png
 [new-session]: ./wireframes/new_session.png
-[feed-show]: ./wireframes/feed_show.png
-[blog-show]: ./wireframes/blog_show.png
-[post-show]: ./wireframes/post_show.png
-[post-form]: ./wireframes/post_form.png
-[search-results]: ./wireframes/search_results.png
+[notebook-index-and-show]: ./wireframes/notebook_index_and_show.png
+[note-form-and-show]: ./wireframes/note_form_and_show.png

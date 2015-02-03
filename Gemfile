@@ -29,6 +29,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'newrelic_rpm'
+gem 'ejs' # adds embedded javascript
+gem 'backbone-on-rails' # implements backbone js
+gem 'jbuilder' # adds jbuilder
+  gem 'bcrypt' # encryption for user authentication, password digesting, etc.
+  gem 'draper' # enables better decorators
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -43,17 +48,12 @@ end
 
 group :development do
   gem 'annotate' # add comment summarizing the current schema to relevant files
-  gem 'bcrypt' # encryption for user authentication, password digesting, etc.
   gem 'better_errors' # better HTTP request errors
   gem 'binding_of_caller' # inputs a live console into better_errors
   gem 'pry-rails' # run the rails console through pry
   gem 'quiet_assets' # turns off the Rails asset pipeline log
-  gem 'draper' # enables better decorators
   gem 'rspec-rails' # allows rspec for testing
   gem 'factory_girl_rails' # replaces fixtures with factories
-  gem 'backbone-on-rails' # implements backbone js
-  gem 'ejs' # adds embedded javascript
-  gem 'jbuilder' # adds jbuilder
 end
 
 group :test do

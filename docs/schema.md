@@ -15,7 +15,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 notebook_id | integer   | not null, foreign key (references notebooks)
 title       | string    | not null
-body        | string    |
+body        | text      |
 ord         | integer   | not null
 
 ## tags

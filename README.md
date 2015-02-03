@@ -76,7 +76,6 @@ as many bonus features as possible.
 
 ### Bonus Features (TBD)
 - [ ] Clickable 'favorite' tag for notes
-- [ ] Ability to sort notes and notebooks via drag and drop
 - [ ] Ability to show a note's related notes (i.e. notes with similar text content)
 - [ ] Notebook picture labels
 - [ ] Support for multiple open sessions

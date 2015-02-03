@@ -1,4 +1,3 @@
-require 'byebug'
 class SessionsController < ApplicationController
 
   before_action :ensure_logged_in, only: :destroy

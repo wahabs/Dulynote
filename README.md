@@ -1,11 +1,11 @@
-# Evernote Clone (name pending)
+# Dulynote
 
 [Heroku link (pending)][heroku]
 
 [heroku]: n/a
 
 ## Minimum Viable Product
-Evernote Clone (name pending) is a clone of Evernote built on Rails and Backbone. Users can:
+Dulynote is a clone of Evernote built on Rails and Backbone. Users can:
 
 - [ ] Create accounts
 - [ ] Create sessions (log in)

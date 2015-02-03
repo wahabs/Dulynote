@@ -4,8 +4,10 @@ window.App = {
   Views: {},
   Routers: {},
   initialize: function() {
-    
+    new App.Routers.Router({ $rootEl : $("#content") });
+    Backbone.history.start();
   }
+
 };
 
 $(document).ready(function(){

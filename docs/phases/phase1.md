@@ -14,6 +14,7 @@
 * API::NotebooksController (index, create, show, destroy)
 * API::NotesController (index, create, show, update, destroy)
 * API::TagsController (index, create, show, destroy)
+* API::TaggingsController (create, destroy)
 
 ### Views
 * root.html.erb

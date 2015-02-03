@@ -14,7 +14,7 @@
 
 ### Views
 * NotebookIndex
-* NotebookShow
+* NotebookShow (edit: recycle NotesIndex)
 * NotebookForm
 * NoteShow
 * NoteForm

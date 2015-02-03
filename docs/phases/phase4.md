@@ -17,8 +17,7 @@ API::Notes (search)
 ### Views
 * TagForm
 * TagShow
-* NoteSearchItem
-* SearchShow (composite view of NoteSearchItem subviews)
+* SearchShow (edit: recycle NotesIndex)
 
 
 ## Gems/Libraries

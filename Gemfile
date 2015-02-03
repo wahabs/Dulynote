@@ -18,13 +18,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -43,3 +38,25 @@ group :development, :test do
   gem 'spring'
 end
 
+group :development do
+  gem 'annotate' # add comment summarizing the current schema to relevant files
+  gem 'bcrypt' # encryption for user authentication, password digesting, etc.
+  gem 'better_errors' # better HTTP request errors
+  gem 'binding_of_caller' # inputs a live console into better_errors
+  gem 'pry-rails' # run the rails console through pry
+  gem 'quiet_assets' # turns off the Rails asset pipeline log
+  gem 'draper' # enables better decorators
+  gem 'rspec-rails' # allows rspec for testing
+  gem 'factory_girl_rails' # replaces fixtures with factories
+  gem 'backbone-on-rails' # implements backbone js
+  gem 'ejs' # adds embedded javascript
+  gem 'jbuilder' # adds jbuilder
+end
+
+group :test do
+  gem 'guard-rspec' # allows automated testing
+  gem 'shoulda-matchers' # better model testing
+  gem 'faker' # generates fake filler data for factories
+  gem 'capybara' # better integration testing
+  gem 'launchy' # allows launching the browser
+end

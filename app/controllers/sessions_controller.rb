@@ -1,3 +1,4 @@
+require 'byebug'
 class SessionsController < ApplicationController
 
   before_action :ensure_logged_in, only: :destroy
@@ -9,12 +10,12 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by_credentials(
-      params[:user][:username],
+      params[:user][:email],
       params[:user][:password]
     )
     if @user
       log_in_user!(@user)
-      render "root"
+      render "static_pages/root"
     else
       @user = User.new
       flash.now[:errors] ||= []
@@ -25,7 +26,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out_user!
-    render :new
+    redirect_to new_session_url
   end
 
   private

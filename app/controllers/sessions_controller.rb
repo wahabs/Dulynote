@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     )
     if @user
       log_in_user!(@user)
-      render "static_pages/root"
+      redirect_to root_url
     else
       @user = User.new
       flash.now[:errors] ||= []
@@ -27,11 +27,5 @@ class SessionsController < ApplicationController
     log_out_user!
     redirect_to new_session_url
   end
-
-  private
-
-    def user_params
-      params.require(:user).permit(:email, :password)
-    end
 
 end

@@ -1,7 +1,7 @@
 class Api::NotesController < ApplicationController
 
   def index
-    # if params[:notebook], get that notebook's notes!
+    # if params[:notebook], get that notebook's notes?
     @notes = current_user.notes
     render json: @notes
   end
@@ -17,6 +17,7 @@ class Api::NotesController < ApplicationController
 
   def show
     @note = Note.find(params[:id])
+    # need to include tags
     render :show
   end
 

@@ -4,6 +4,7 @@ App.Views.NoteForm = Backbone.View.extend({
   initialize : function(options) {
     // expecting note model
     this.notebooks = options.notebooks;
+    this.listenTo(this.model, 'sync', this.render);
   },
 
   events: {

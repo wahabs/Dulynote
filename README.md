@@ -1,8 +1,10 @@
 # Dulynote
 
-[Heroku link (pending)][heroku]
+[Site link][site]
+[Heroku link][heroku]
 
-[heroku]: n/a
+[site]: http://www.dulynote.io/
+[heroku]: https://dulynote.herokuapp.com/
 
 ## Minimum Viable Product
 Dulynote is a clone of Evernote built on Rails and Backbone. Users can:

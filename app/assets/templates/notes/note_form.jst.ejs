@@ -1,6 +1,24 @@
-<h3>Add Note</h3>
+<h3><%= (note.id) ? note.escape("title") : "New Note" %></h3>
 <form id="note-form">
+
+  <div class="notebook-select">
+    <label for="notebook">Notebook</label>
+      <select id="notebook" name="notebook_id">
+        <% notebooks.each(function(notebook) { %>
+          <option
+            value="<%= notebook.id %>"
+            <%= (note.get("notebook_id") === notebook.id) ? "selected" : "" %>>
+          <%= notebook.escape("title") %>
+          </option>
+        <% }) %>
+      </select>
+  </div>
+
   <label for="title">Title</label>
-    <input type="text" name="title" value="" id="title">
-  <input type="submit" value="Create!">
+    <input type="text" name="title" value="<%= note.escape("title") %>" id="title">
+
+  <label for="body"></label>
+    <textarea name="body" id="body" rows="8" cols="40"><%= note.escape("body") %></textarea>
+
+  <input type="submit" value=<%= (note.id) ? "Update" : "Create!" %>>
 </form>

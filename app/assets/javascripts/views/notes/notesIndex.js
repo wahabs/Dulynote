@@ -3,7 +3,7 @@ App.Views.NotesIndex = Support.CompositeView.extend({
 
   initialize : function(options) {
     this.collection = this.model.notes();
-    this.listenTo(this.collection, "sync remove", this.render)
+    this.listenTo(this.collection, "sync", this.render)
     this.listenTo(this.collection, "add", this.addNote);
   },
 
@@ -22,8 +22,10 @@ App.Views.NotesIndex = Support.CompositeView.extend({
 
   addNoteForm : function() {
     this.appendChildTo(
-      new App.Views.NoteForm({ model: this.model }), ".note-new"
-    );
+      new App.Views.NoteForm({
+         model: new App.Models.Note(),
+         notebooks: new App.Collections.Notebooks()
+      }), ".note-new");
   }
 
 })

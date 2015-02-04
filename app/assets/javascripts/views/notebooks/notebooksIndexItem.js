@@ -16,6 +16,7 @@ App.Views.NotebooksIndexItem = Support.CompositeView.extend({
   deleteNotebook : function(event) {
     this.model.destroy();
     this.leave();
+    Backbone.history.navigate("", { trigger: true });
   }
 
 })

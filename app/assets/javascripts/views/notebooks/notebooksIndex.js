@@ -2,7 +2,7 @@ App.Views.NotebooksIndex = Support.CompositeView.extend({
   template: JST["notebooks/notebooks_index"],
 
   initialize : function(options) {
-    this.listenTo(this.collection, "sync remove", this.render)
+    this.listenTo(this.collection, "sync", this.render)
     this.listenTo(this.collection, "add", this.addNotebook);
   },
 

@@ -13,14 +13,15 @@ App.Views.NotebookForm = Backbone.View.extend({
 
   createNotebook : function(event) {
     event.preventDefault();
+    var that = this;
     var formData = $(event.currentTarget).serializeJSON();
     var notebook = new App.Models.Notebook();
     notebook.set(formData);
-    // need to add ord and current_user.id
+    notebook.set("ord", that.collection.nextOrd());
     notebook.save({}, {
       success: function() {
-        // need to add to collection and remember to merge: true
-         Backbone.history.navigate("api/notebook/" + notebook.id, { trigger: true })
+        that.collection.add(notebook, { merge: true });
+        Backbone.history.navigate("api/notebook/" + notebook.id, { trigger: true })
       }
     });
   }

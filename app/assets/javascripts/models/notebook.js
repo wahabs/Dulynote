@@ -1,5 +1,6 @@
 App.Models.Notebook = Backbone.Model.extend({
-  urlRoot: "/notebooks",
+
+  urlRoot: "api/notebooks",
 
   notes : function() {
     if (!this._notes) {
@@ -20,12 +21,9 @@ App.Models.Notebook = Backbone.Model.extend({
     return this.notes().pluck("ord");
   },
 
-  nextOrd : function() {
-    if (Math.max.apply(null, this.noteOrds()) < 0) {
-      return 0;
-    } else {
-      return Math.max.apply(null, this.noteOrds()) + 1;
-    }
+  nextNoteOrd : function() {
+    var lastOrd = Math.max.apply(null, this.noteOrds());
+    return (lastOrd < 0) ? 0 : lastOrd + 1;
   }
 
 })

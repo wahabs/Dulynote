@@ -14,7 +14,6 @@ App.Views.NotebooksIndexItem = Support.CompositeView.extend({
   },
 
   deleteNotebook : function(event) {
-    debugger
     this.model.destroy();
     this.leave();
   }

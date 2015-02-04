@@ -21,10 +21,11 @@ App.Views.NotesIndex = Support.CompositeView.extend({
   },
 
   addNoteForm : function() {
+    var that = this;
     this.appendChildTo(
       new App.Views.NoteForm({
          model: new App.Models.Note(),
-         notebooks: new App.Collections.Notebooks()
+         notebooks: new App.Collections.Notebooks([that.model])
       }), ".note-new");
   }
 

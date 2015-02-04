@@ -13,6 +13,9 @@ App.Views.NoteForm = Backbone.View.extend({
   render : function() {
     var content = this.template({ note: this.model, notebooks: this.notebooks });
     this.$el.html(content);
+    if (this.notebooks.length === 1) {
+      this.$('.notebook-select').prop("hidden", true);
+    }
     return this;
   },
 
@@ -21,12 +24,12 @@ App.Views.NoteForm = Backbone.View.extend({
     var that = this;
     var formData = $(event.currentTarget).serializeJSON();
     that.model.set(formData);
-    // that.model.set("ord", that.model.notes().nextOrd());
-    // that.model.set("notebook_id", that.model.id)
+    var notebook = this.notebooks.getOrFetch(that.model.get("notebook_id"));
+    that.model.set("ord", notebook.notes().nextOrd());
     that.model.save({}, {
       success: function() {
-        that.model.notes().add(that.model, { merge: true });
-        Backbone.history.navigate("notebooks/" + that.model.get("notebook_id"), { trigger: true })
+        notebook.notes().add(that.model, { merge: true });
+        Backbone.history.navigate("notebooks/" + notebook.id, { trigger: true })
       }
     });
   }

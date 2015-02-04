@@ -1,24 +1,25 @@
-App.Routers.Router = Backbone.Router.extend({
+App.Routers.Router = Support.SwappingRouter.extend({
 
   initialize : function(options) {
-    this.$rootEl = options.$rootEl;
+    this.el = options.$rootEl;
     this.notebooks = new App.Collections.Notebooks();
   },
 
   routes : {
-    "" : "index"
+    "" : "notebooksIndex",
+    "notebooks/:id" : "notebookShow"
   },
 
-  index : function() {
+  notebooksIndex : function() {
     this.notebooks.fetch();
-    var indexView = new App.Views.NotebooksIndex({ collection: this.notebooks });
-    this._swapView(indexView);
+    var view = new App.Views.NotebooksIndex({ collection: this.notebooks });
+    this.swap(view);
   },
 
-  _swapView : function(newView) {
-    this.currentView && this.currentView.remove();
-    this.currentView = newView;
-    this.$rootEl.html(newView.render().$el);
+  notebookShow : function(id) {
+    var notebook = this.notebooks.getOrFetch(id);
+    var view = new App.Views.NotebookShow({ model: notebook });
+    this.swap(view);
   }
 
 })

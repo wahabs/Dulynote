@@ -31,9 +31,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'newrelic_rpm'
 gem 'ejs' # adds embedded javascript
 gem 'backbone-on-rails' # implements backbone js
+gem "backbone-support" # Adds utility classes CompositeView and SwappingRouter to Backbone
 gem 'jbuilder' # adds jbuilder
-  gem 'bcrypt' # encryption for user authentication, password digesting, etc.
-  gem 'draper' # enables better decorators
+gem 'bcrypt' # encryption for user authentication, password digesting, etc.
+gem 'draper' # enables better decorators
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

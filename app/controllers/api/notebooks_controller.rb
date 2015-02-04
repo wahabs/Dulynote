@@ -10,11 +10,14 @@ class Api::NotebooksController < ApplicationController
   end
 
   def show
-
+    @notebook = Notebook.find(params[:id])
+    render "api/notebooks/show"
   end
 
   def destroy
-
+    @notebook = current_user.notebooks.find(params[:id])
+    @notebook.try(:destroy)
+    render json: {}
   end
 
   private

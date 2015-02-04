@@ -6,12 +6,18 @@ class Api::NotebooksController < ApplicationController
   end
 
   def create
-
+    @notebook = current_user.notebooks.new(notebook_params)
+    if @notebook.save
+      render json: @notebook
+    else
+      render json: @notebook.errors.full_messages, status: 422
+    end
   end
 
   def show
     @notebook = Notebook.find(params[:id])
-    render "api/notebooks/show"
+    # need to include notes, tags
+    render :show
   end
 
   def destroy

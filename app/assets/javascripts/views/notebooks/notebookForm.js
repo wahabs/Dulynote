@@ -19,6 +19,7 @@ App.Views.NotebookForm = Backbone.View.extend({
     // need to add ord and current_user.id
     notebook.save({}, {
       success: function() {
+        // need to add to collection and remember to merge: true
          Backbone.history.navigate("api/notebook/" + notebook.id, { trigger: true })
       }
     });

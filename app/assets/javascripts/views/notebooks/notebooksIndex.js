@@ -7,7 +7,7 @@ App.Views.NotebooksIndex = Support.CompositeView.extend({
   },
 
   render : function() {
-    var content = this.template({ notebooks: this.collection });
+    var content = this.template();
     this.$el.html(content);
     this.collection.each( function(notebook) { this.addNotebook(notebook) }, this);
     this.addNotebookForm();

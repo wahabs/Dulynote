@@ -21,7 +21,7 @@ App.Views.NotebookForm = Backbone.View.extend({
     notebook.save({}, {
       success: function() {
         that.collection.add(notebook, { merge: true });
-        Backbone.history.navigate("api/notebook/" + notebook.id, { trigger: true })
+        Backbone.history.navigate("notebook/" + notebook.id, { trigger: true })
       }
     });
   }

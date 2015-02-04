@@ -15,15 +15,6 @@ App.Models.Notebook = Backbone.Model.extend({
       delete jsonResp.notes;
     }
     return jsonResp;
-  },
-
-  noteOrds : function() {
-    return this.notes().pluck("ord");
-  },
-
-  nextNoteOrd : function() {
-    var lastOrd = Math.max.apply(null, this.noteOrds());
-    return (lastOrd < 0) ? 0 : lastOrd + 1;
   }
 
 })

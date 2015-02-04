@@ -15,7 +15,7 @@ class Api::NotebooksController < ApplicationController
   end
 
   def show
-    @notebook = Notebook.find(params[:id])
+    @notebook = Notebook.includes(:notes).find(params[:id])
     # need to include notes, tags
     render :show
   end

@@ -23,6 +23,6 @@ App.Views.NotebooksIndex = Support.CompositeView.extend({
     this.appendChildTo(
       new App.Views.NotebookForm({ collection: this.collection}), ".notebook-new"
     );
-  }
+  },
 
 })

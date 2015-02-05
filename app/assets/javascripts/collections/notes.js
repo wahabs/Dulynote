@@ -3,6 +3,17 @@ App.Collections.Notes = Backbone.Collection.extend({
   model: App.Models.Note,
   comparator: "ord",
 
+  tags : function() {
+    var that = this;
+    if (!that._tags) {
+      that._tags = new App.Collections.Tags();
+      that.each(function(note) {
+        that._tags.add(note.tags().toJSON(), { silent: true });
+      })
+    }
+    return that._tags;
+  },
+
   getOrFetch : function(id) {
     var note = this.get(id);
 

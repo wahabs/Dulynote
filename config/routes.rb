@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     resources :notebooks
     resources :notes
     resources :tags, only: [:index, :create, :show, :destroy]
-    resources :taggings, only: [:create, :destroy]
   end
 
 end

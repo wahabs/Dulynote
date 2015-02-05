@@ -7,16 +7,6 @@ class Api::TagsController < ApplicationController
     render json: @tags
   end
 
-  def create
-    @note = Note.find(params[:note][:id])
-    @tag = @note.tags.new(tag_params)
-    if @tag.save
-      render json: @tag
-    else
-      render json: @tag.errors.full_messages, status: 422
-    end
-  end
-
   def show
     @tag = Tag.includes(:notes).find(params[:id])
     render :show

@@ -1,4 +1,4 @@
-<h3><%= (note.id) ? note.escape("title") : "Add Note" %></h3>
+<h3><%= note.isNew() ? "Add Note" : note.escape("title") %></h3>
 <form id="note-form">
 
   <div class="notebook-select">
@@ -20,5 +20,5 @@
   <label for="body"></label>
     <textarea name="body" id="body" rows="8" cols="40"><%= note.escape("body") %></textarea>
 
-  <input type="submit" value=<%= (note.id) ? "Update" : "Create!" %>>
+  <input type="submit" value=<%= note.isNew() ? "Create!" : "Update" %>>
 </form>

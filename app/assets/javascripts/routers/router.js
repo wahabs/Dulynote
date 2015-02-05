@@ -9,7 +9,8 @@ App.Routers.Router = Support.SwappingRouter.extend({
   routes : {
     "" : "notebooksIndex",
     "notebooks/:id" : "notebookShow",
-    "notes/:id/edit" : "noteEdit"
+    "notes/:id/edit" : "noteEdit",
+    "notes/new" : "noteNew"
   },
 
   notebooksIndex : function() {
@@ -36,7 +37,6 @@ App.Routers.Router = Support.SwappingRouter.extend({
     var note = new App.Models.Note();
     var view = new App.Views.NoteForm({ model: note, notebooks: this.notebooks });
     this.swap(view);
-    // want to be able to create it within a notebook, or create it and then set the notebook
   }
 
 })

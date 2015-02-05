@@ -16,8 +16,7 @@ class Api::NotesController < ApplicationController
   end
 
   def show
-    @note = Note.find(params[:id])
-    # need to include tags
+    @note = Note.includes(:tags).find(params[:id])
     render :show
   end
 

@@ -3,7 +3,7 @@ class Api::TagsController < ApplicationController
   before_action :ensure_logged_in
 
   def index
-    @tags = Tag.all
+    @tags = current_user.tags
     render json: @tags
   end
 

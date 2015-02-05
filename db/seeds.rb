@@ -29,11 +29,20 @@ n10 = nb5.notes.create!(title: "Note E2", body: "Body of E2", ord: 1)
 n11 = nb6.notes.create!(title: "Note F1", body: "Body of F1", ord: 0)
 n12 = nb6.notes.create!(title: "Note F2", body: "Body of F2", ord: 1)
 
-t1 = Tag.create(label: "alpha")
-t1.note_ids = [1,3,5,7,9,11]
-t2 = Tag.create(label: "beta")
-t2.note_ids = [2,4,6,8,10,12]
-t3 = Tag.create(label: "gamma")
-t3.note_ids = [2,3,5,7,11]
-t4 = Tag.create(label: "delta")
-t4.note_ids = [1,5,8,12]
+t1 = u1.tags.create!(label: "Everything")
+t1.note_ids = [1,2,3,4,5,6]
+
+t2 = u2.tags.create!(label: "Everything")
+t2.note_ids = [7,8,9,10,11,12]
+
+t3 = u1.tags.create!(label: "Ones")
+t3.note_ids = [1,3,5]
+
+t4 = u1.tags.create!(label: "Twos")
+t4.note_ids = [2,4,6]
+
+t5 = u2.tags.create!(label: "Ones")
+t5.note_ids = [7,9,11]
+
+t6 = u2.tags.create!(label: "Twos")
+t6.note_ids = [8,10,12]

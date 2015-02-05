@@ -4,6 +4,7 @@ App.Routers.Router = Support.SwappingRouter.extend({
     this.el = options.$rootEl;
     this.notebooks = new App.Collections.Notebooks();
     this.notes = new App.Collections.Notes();
+    this.tags = new App.Collections.Tags();
   },
 
   routes : {

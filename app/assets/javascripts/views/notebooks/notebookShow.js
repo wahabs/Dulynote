@@ -12,8 +12,4 @@ App.Views.NotebookShow = Support.CompositeView.extend({
     this.appendChild(new App.Views.NotesIndex({ model: this.model }));
   },
 
-  // addTags : function() {
-  //   this.appendChildTo(new App.Views.TagsIndex({ }), ".tags-list");
-  // }
-
 })

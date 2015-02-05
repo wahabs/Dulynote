@@ -11,12 +11,14 @@ App.Routers.Router = Support.SwappingRouter.extend({
     "" : "notebooksIndex",
     "notebooks/:id" : "notebookShow",
     "notes/:id/edit" : "noteEdit",
-    "notes/new" : "noteNew"
+    "notes/new" : "noteNew",
+    "tags" : "tagsIndex"
   },
 
   notebooksIndex : function() {
     this.notebooks.fetch();
-    var view = new App.Views.NotebooksIndex({ collection: this.notebooks });
+    this.tags.fetch();
+    var view = new App.Views.NotebooksIndex({ collection: this.notebooks, tags: this.tags });
     this.swap(view);
   },
 
@@ -37,6 +39,12 @@ App.Routers.Router = Support.SwappingRouter.extend({
     this.notebooks.fetch();
     var note = new App.Models.Note();
     var view = new App.Views.NoteForm({ model: note, notebooks: this.notebooks });
+    this.swap(view);
+  },
+
+  tagsIndex : function() {
+    this.tags.fetch();
+    var view = new App.Views.TagsIndex({ collection: this.tags })
     this.swap(view);
   }
 

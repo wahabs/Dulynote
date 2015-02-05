@@ -2,9 +2,8 @@ App.Views.TagsIndex = Support.CompositeView.extend({
   template: JST["tags/tags_index"],
 
   initialize : function(options) {
-    // this.collection = this.model.tags();
     this.listenTo(this.collection, "sync", this.render)
-    this.listenTo(this.collection, "add", this.addNote);
+    this.listenTo(this.collection, "add", this.addTag);
   },
 
   render : function() {
@@ -18,7 +17,7 @@ App.Views.TagsIndex = Support.CompositeView.extend({
   addTag : function(tag) {
     var item = new App.Views.TagsIndexItem({ model: tag });
     this.appendChildTo(item, ".tags-list");
-  },
+  }
 
   // addTagForm : function() {
   //   var that = this;

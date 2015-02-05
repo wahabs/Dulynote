@@ -8,7 +8,7 @@ App.Views.TagsIndexItem = Support.CompositeView.extend({
   },
 
   render: function() {
-    var content = this.template({ note: this.model });
+    var content = this.template({ tag: this.model });
     this.$el.html(content);
     return this;
   },

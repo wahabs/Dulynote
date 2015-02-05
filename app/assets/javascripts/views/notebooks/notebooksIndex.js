@@ -2,6 +2,7 @@ App.Views.NotebooksIndex = Support.CompositeView.extend({
   template: JST["notebooks/notebooks_index"],
 
   initialize : function(options) {
+    this.tags = options.tags
     this.listenTo(this.collection, "sync", this.render)
     this.listenTo(this.collection, "add", this.addNotebook);
   },
@@ -11,6 +12,7 @@ App.Views.NotebooksIndex = Support.CompositeView.extend({
     this.$el.html(content);
     this.collection.each( function(notebook) { this.addNotebook(notebook) }, this);
     this.addNotebookForm();
+    this.addTags();
     return this;
   },
 
@@ -24,5 +26,9 @@ App.Views.NotebooksIndex = Support.CompositeView.extend({
       new App.Views.NotebookForm({ collection: this.collection}), ".notebook-new"
     );
   },
+
+  addTags : function() {
+    this.appendChild(new App.Views.TagsIndex({ collection: this.tags }));
+  }
 
 })

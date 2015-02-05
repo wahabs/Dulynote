@@ -1,4 +1,4 @@
-# Phase 4: User Feeds
+# Phase 4: Searching for Notes via Title or Tag
 
 ## Rails
 ### Models

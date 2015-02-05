@@ -11,7 +11,9 @@ App.Views.NotesIndex = Support.CompositeView.extend({
     var content = this.template();
     this.$el.html(content);
     this.collection.each( function(note) { this.addNote(note) }, this);
-    this.addNoteForm();
+    if (this.model.constructor === App.Models.Notebook) {
+      this.addNoteForm();
+    }
     return this;
   },
 

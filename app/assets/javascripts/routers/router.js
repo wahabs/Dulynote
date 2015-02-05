@@ -12,7 +12,8 @@ App.Routers.Router = Support.SwappingRouter.extend({
     "notebooks/:id" : "notebookShow",
     "notes/:id/edit" : "noteEdit",
     "notes/new" : "noteNew",
-    "tags" : "tagsIndex"
+    "tags" : "tagsIndex",
+    "tags/:id" : "tagShow"
   },
 
   notebooksIndex : function() {
@@ -45,6 +46,12 @@ App.Routers.Router = Support.SwappingRouter.extend({
   tagsIndex : function() {
     this.tags.fetch();
     var view = new App.Views.TagsIndex({ collection: this.tags })
+    this.swap(view);
+  },
+
+  tagShow : function(id) {
+    var tag = this.tags.getOrFetch(id);
+    var view = new App.Views.TagShow({ model: tag });
     this.swap(view);
   }
 

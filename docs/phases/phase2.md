@@ -1,4 +1,4 @@
-# Phase 2: JSON API and First Backbone Views
+# Phase 2: Client-side routes and views
 
 ## Rails
 ### Models

@@ -1,4 +1,3 @@
-require 'byebug'
 class Api::TagsController < ApplicationController
 
   before_action :ensure_logged_in

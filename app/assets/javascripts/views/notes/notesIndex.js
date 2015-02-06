@@ -14,6 +14,7 @@ App.Views.NotesIndex = Support.CompositeView.extend({
     if (this.model.constructor === App.Models.Notebook) {
       this.addNoteForm();
     }
+    this.addSearch();
     return this;
   },
 
@@ -29,6 +30,15 @@ App.Views.NotesIndex = Support.CompositeView.extend({
          model: new App.Models.Note(),
          notebooks: new App.Collections.Notebooks([that.model])
       }), ".note-new");
+  },
+
+  addSearch : function() {
+    debugger
+    this.$("#note-search").hideseek({
+      // attribute: "title",
+      // nodata: "No matches.",
+      // navigation: true
+    });
   }
 
 })

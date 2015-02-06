@@ -34,7 +34,6 @@ class Api::TagsController < ApplicationController
 
   def destroy
     @tag = Tag.find(params[:id])
-
     # if the tag has multiple notes and a note_id is received with the destroy
     # request, don't destroy the tag but the tagging
     if params[:note_id] && @tag.notes.length > 1
@@ -42,7 +41,6 @@ class Api::TagsController < ApplicationController
     else
       @tag.destroy
     end
-
     render json: {}
   end
 

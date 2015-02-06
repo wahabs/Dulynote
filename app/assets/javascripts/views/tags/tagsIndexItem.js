@@ -18,7 +18,6 @@ App.Views.TagsIndexItem = Support.CompositeView.extend({
   },
 
   deleteTag : function(event) {
-
     if (this.note) {
       var path = "/api/notes/" + this.note.id + "/tags/" + this.model.id;
       this.note.tags().remove(this.model);
@@ -26,7 +25,6 @@ App.Views.TagsIndexItem = Support.CompositeView.extend({
     } else {
       this.model.destroy();
     }
-
     this.leave();
   }
 

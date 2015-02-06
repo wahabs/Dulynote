@@ -33,18 +33,6 @@ App.Views.NoteForm = Support.CompositeView.extend({
     this.appendChildTo(new App.Views.TagsIndex({ collection: this.model.tags(), note: this.model }), ".note-tags");
   },
 
-  // removeTag : function(event) {
-  //   var tag = this.model.tags().getOrFetch($(event.currentTarget).data("tag-id"));
-  //   this.model.tags().remove(tag);
-  //   tag.destroy();
-  //
-  //   if (tag.notes().length === 1) {
-  //     tag.destroy();
-  //   }
-  //
-  //   this.model.save();
-  // },
-
   submitNote : function(event) {
     event.preventDefault();
     var that = this;

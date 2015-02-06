@@ -16,6 +16,9 @@ App.Views.TagForm = Backbone.View.extend({
     var that = this;
     var note = that.model;
     var formData = $(event.currentTarget).serializeJSON();
+    debugger
+    // need to prevent adding if note already contains tag
+    // need to check if we're creating a new tag or adding this note to an existing tag
     var tag = new App.Models.Tag(formData);
     tag.set("note_id", note.id)
     tag.save({}, {

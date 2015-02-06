@@ -3,7 +3,6 @@ class Api::NotesController < ApplicationController
   before_action :ensure_logged_in
 
   def index
-    # if params[:notebook], get that notebook's notes?
     @notes = current_user.notes
     render json: @notes
   end

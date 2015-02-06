@@ -6,7 +6,7 @@ App.Views.NoteForm = Support.CompositeView.extend({
     this.tags = options.tags;
     this.notebooks = options.notebooks;
     this.listenTo(this.model, 'sync', this.render);
-    this.listenTo(this.model.tags(), 'add remove', this.render);
+    this.listenTo(this.model.tags(), 'add', this.render);
   },
 
   events: {

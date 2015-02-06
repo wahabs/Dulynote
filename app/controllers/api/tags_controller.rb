@@ -25,7 +25,7 @@ class Api::TagsController < ApplicationController
   def update
     @tag = Tag.find(params[:id])
     if @tag.update(tag_params)
-      @tag.note_ids += [params[:note_id]] if params[:note_id]
+      @tag.note_ids += [params[:note_id].to_i] if params[:note_id]
       render json: @tag
     else
       render json: @tag.errors.full_messages, status: 422
@@ -35,7 +35,7 @@ class Api::TagsController < ApplicationController
   def destroy
     @tag = Tag.find(params[:id])
     # if the tag has multiple notes and a note_id is received with the destroy
-    # request, don't destroy the tag but the tagging
+    # request, destroy the note's tagging rather than the tag
     if params[:note_id] && @tag.notes.length > 1
       @tag.note_ids -= [params[:note_id].to_i]
     else

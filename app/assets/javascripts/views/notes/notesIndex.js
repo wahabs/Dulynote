@@ -2,7 +2,7 @@ App.Views.NotesIndex = Support.CompositeView.extend({
   template: JST["notes/notes_index"],
 
   initialize : function(options) {
-    this.collection = this.model.notes();
+    this.collection = this.collection || this.model.notes();
     this.listenTo(this.collection, "sync", this.render)
     this.listenTo(this.collection, "add", this.addNote);
   },

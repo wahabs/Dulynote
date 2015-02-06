@@ -59,8 +59,7 @@ accessible via a left sidebar that hides unless the mouse is on the left part of
 ### Phase 4: Searching for Notes via Title or Tag (~2 days)
 I'll need a `search` route that accepts a query in the params. The controller
 action will run a query to find notes where the `title` matches the search term.
-In Backbone, I plan to implement a `SearchNotes` view (similar to `NotebookShow`) that will display matching notes. I will also have a Tag Form and Tag Show that will be displayed on the `note_show` template, such that a user can create a tag, and then click on that tag to retrieve a `SearchNotes`
-that has all other notes with that tag.
+In Backbone, I plan to implement a `SearchNotes` view (similar to `NotebookShow`) that will display matching notes. I will also have a Tag Form and Tag Show that will be displayed on the `note_show` template, such that a user can create a tag, and then click on that tag to retrieve a `SearchNotes` that has all other notes with that tag.
 
 [Details][phase-four]
 

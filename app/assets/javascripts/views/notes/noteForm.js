@@ -3,6 +3,7 @@ App.Views.NoteForm = Support.CompositeView.extend({
 
   initialize : function(options) {
     // expecting note model
+    this.tags = options.tags;
     this.notebooks = options.notebooks;
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model.tags(), 'add remove', this.render);
@@ -26,7 +27,7 @@ App.Views.NoteForm = Support.CompositeView.extend({
   },
 
   addTagForm : function() {
-    this.appendChild(new App.Views.TagForm({ model: this.model }));
+    this.appendChild(new App.Views.TagForm({ model: this.model, collection: this.tags }));
   },
 
   addTags : function() {

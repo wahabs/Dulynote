@@ -3,6 +3,10 @@ App.Views.TagsIndexItem = Support.CompositeView.extend({
   tagName: "li",
   className: "tag-index-item",
 
+  initialize : function(options) {
+    this.note = options.note;
+  },
+
   events: {
     "click button.tag-delete" : "deleteTag"
   },
@@ -14,11 +18,16 @@ App.Views.TagsIndexItem = Support.CompositeView.extend({
   },
 
   deleteTag : function(event) {
-    this.model.destroy();
+
+    if (this.note) {
+      var path = "/api/notes/" + this.note.id + "/tags/" + this.model.id;
+      this.note.tags().remove(this.model);
+      this.model.destroy({ url: path });
+    } else {
+      this.model.destroy();
+    }
+
     this.leave();
-    // Backbone.history.navigate(
-    //   "notebooks/" + this.model.get("notebook_id"), { trigger: true }
-    // );
   }
 
 })

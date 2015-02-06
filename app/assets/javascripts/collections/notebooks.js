@@ -3,6 +3,17 @@ App.Collections.Notebooks = Backbone.Collection.extend({
   model: App.Models.Notebook,
   comparator: "ord",
 
+  notes : function() {
+    var that = this;
+    if (!that._notes) {
+      that._notes = new App.Collections.Notes();
+      that.each(function(notebook) {
+        that._notes.add(notebook.notes().toJSON(), { silent: true });
+      })
+    }
+    return that._notes;
+  },
+
   getOrFetch : function(id) {
     var notebook = this.get(id);
 

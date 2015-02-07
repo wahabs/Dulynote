@@ -1,5 +1,5 @@
-App.Views.NoteForm = Support.CompositeView.extend({
-  template: JST["notes/note_form"],
+App.Views.NoteEdit = Support.CompositeView.extend({
+  template: JST["notes/note_edit"],
 
   initialize : function(options) {
     // expecting note model
@@ -10,7 +10,7 @@ App.Views.NoteForm = Support.CompositeView.extend({
   },
 
   events: {
-    "submit #note-form" : "submitNote",
+    "submit #note-edit" : "submitNote",
     "click .tag-remove" : "removeTag"
   },
 
@@ -19,11 +19,12 @@ App.Views.NoteForm = Support.CompositeView.extend({
     this.$el.html(content);
     this.addTagForm();
     this.addTags();
-    if (this.notebooks.length === 1) {
-      this.$('.notebook-select').prop("hidden", true);
-      this.$('#tag-form').prop("hidden", true);
-    }
+    this.addEditable();
     return this;
+  },
+
+  addEditable : function() {
+    aloha.dom.query('.editable', document).forEach(aloha);
   },
 
   addTagForm : function() {
@@ -35,10 +36,18 @@ App.Views.NoteForm = Support.CompositeView.extend({
   },
 
   submitNote : function(event) {
+    debugger
     event.preventDefault();
     var that = this;
+
     var formData = $(event.currentTarget).serializeJSON();
     that.model.set(formData);
+
+    that.model.set({
+      title: $(event.currentTarget).find('#title').html(),
+      body: $(event.currentTarget).find('#body').html()
+    });
+
     var notebook = this.notebooks.getOrFetch(that.model.get("notebook_id"));
     that.model.set("ord", notebook.notes().nextOrd());
     that.model.save({}, {

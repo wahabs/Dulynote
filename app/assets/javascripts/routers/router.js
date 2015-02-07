@@ -32,14 +32,7 @@ App.Routers.Router = Support.SwappingRouter.extend({
     this.notebooks.fetch();
     this.tags.fetch();
     var note = this.notes.getOrFetch(id);
-    var view = new App.Views.NoteForm({ model: note, notebooks: this.notebooks, tags: this.tags });
-    this.swap(view);
-  },
-
-  noteNew : function() {
-    this.notebooks.fetch();
-    var note = new App.Models.Note();
-    var view = new App.Views.NoteForm({ model: note, notebooks: this.notebooks });
+    var view = new App.Views.NoteEdit({ model: note, notebooks: this.notebooks, tags: this.tags });
     this.swap(view);
   },
 

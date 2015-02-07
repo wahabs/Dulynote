@@ -1,8 +1,12 @@
-<h3><%= note.isNew() ? "Add Note" : note.escape("title") %></h3>
-
 <div class="note-tags"></div>
 
-<form id="note-form">
+<form id="note-edit">
+
+  <label for="title"></label>
+    <h2><div name="title" id="title" class="editable"><%= note.get("title") %></div></h2>
+
+  <label for="body"></label>
+    <div name="body" id="body" class="editable"><%= note.get("body") %></div><br><br>
 
   <div class="notebook-select">
     <label for="notebook">Notebook</label>
@@ -16,12 +20,6 @@
         <% }) %>
       </select>
   </div>
-
-  <label for="title">Title</label>
-    <input type="text" name="title" value="<%= note.escape("title") %>" id="title">
-
-  <label for="body"></label>
-    <textarea name="body" id="body" rows="8" cols="40"><%= note.escape("body") %></textarea>
 
   <input type="submit" value=<%= note.isNew() ? "Create!" : "Update" %>>
 </form>

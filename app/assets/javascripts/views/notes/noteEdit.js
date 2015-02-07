@@ -36,7 +36,6 @@ App.Views.NoteEdit = Support.CompositeView.extend({
   },
 
   submitNote : function(event) {
-    debugger
     event.preventDefault();
     var that = this;
 

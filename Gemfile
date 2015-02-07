@@ -33,6 +33,7 @@ gem "backbone-support" # Adds utility classes CompositeView and SwappingRouter t
 gem 'jbuilder' # adds jbuilder
 gem 'bcrypt' # encryption for user authentication, password digesting, etc.
 gem 'draper' # enables better decorators
+gem 'bootstrap-sass' # style with bootstrap
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

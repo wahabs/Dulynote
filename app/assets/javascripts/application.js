@@ -17,6 +17,7 @@
 //= require backbone
 //= require backbone-support
 //= require dulynote
+//= require bootstrap
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

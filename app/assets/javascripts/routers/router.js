@@ -2,6 +2,7 @@ App.Routers.Router = Support.SwappingRouter.extend({
 
   initialize : function(options) {
     this.el = options.$rootEl;
+    this.sideEl = options.$sideEl;
     this.notebooks = new App.Collections.Notebooks();
     this.notes = new App.Collections.Notes();
     this.tags = new App.Collections.Tags();
@@ -40,6 +41,19 @@ App.Routers.Router = Support.SwappingRouter.extend({
     var tag = this.tags.getOrFetch(id);
     var view = new App.Views.TagShow({ model: tag });
     this.swap(view);
+  },
+
+  swapSideView: function(sideView) {
+    if (this.currentSide && this.currentSide.leave) {
+      this.currentSide.leave();
+    }
+
+    this.currentSide = sideView;
+    $(this.sideEl).html(this.currentSide.render().el);
+
+    if (this.currentSide && this.currentSide.swapped) {
+      this.currentSide.swapped();
+    }
   }
 
 })

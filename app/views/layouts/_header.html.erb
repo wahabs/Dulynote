@@ -1,9 +1,8 @@
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container container-fluid">
-    <div class="navbar header">
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
 
-      <a class="navbar-brand" href="#">Dulynote</a>
-    </div>
+    <a class="navbar-brand" href="#">Dulynote</a>
+
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
@@ -25,5 +24,4 @@
 <%= flash[:errors].join("<br>").html_safe %>
 </div>
 <% end %>
-
 <%= link_to "Refresh", root_url %>

@@ -1,12 +1,25 @@
 <div class="note-tags"></div>
 
+<label for="title"></label>
+  <h2><div name="title" id="title" class="editable"><%= note.get("title") %></div></h2>
+
+<button class="action-bold"><b>B</b></button>
+<button class="action-italic"><i>I</i></button>
+<button class="action-underline"><u>U</u></button>
+<button class="action-unformat">✘</button>
+<button class="action-p">paragraph</button>
+<button class="action-h1">H1</button>
+<button class="action-h2">H2</button>
+<button class="action-h3">H3</button>
+<button class="action-h4">H4</button>
+<button class="action-ol">Ordered List</button>
+<button class="action-ul">Unordered List</button>
+<button class="action-pre">Preformatted</button>
+
+<label for="body"></label>
+  <div name="body" id="body" class="editable"><%= note.get("body") %></div>
+
 <form id="note-edit">
-
-  <label for="title"></label>
-    <h2><div name="title" id="title" class="editable"><%= note.get("title") %></div></h2>
-
-  <label for="body"></label>
-    <div name="body" id="body" class="editable"><%= note.get("body") %></div><br><br>
 
   <div class="notebook-select">
     <label for="notebook">Notebook</label>

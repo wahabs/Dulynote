@@ -10,8 +10,7 @@ App.Views.NoteEdit = Support.CompositeView.extend({
   },
 
   events: {
-    "submit #note-edit" : "submitNote",
-    "click .tag-remove" : "removeTag"
+    "submit #note-edit" : "submitNote"
   },
 
   render : function() {
@@ -24,7 +23,28 @@ App.Views.NoteEdit = Support.CompositeView.extend({
   },
 
   addEditable : function() {
-    aloha.dom.query('.editable', document).forEach(aloha);
+    var editables = aloha.dom.query('.editable', document).map(aloha);
+
+    _(editables).each(function (editable) {
+      for (var command in aloha.ui.commands) {
+        this.$('.action-' + command).on(
+          'click', aloha.ui.command(editable, aloha.ui.commands[command])
+        );
+      }
+    })
+
+    function middleware(event) {
+      this.$('.active').removeClass('active');
+      if ('leave' !== event.type) {
+        var states = aloha.ui.states(aloha.ui.commands, event);
+        for (var selector in states) {
+          this.$('.action-' + selector).toggleClass('active', states[selector]);
+        }
+      }
+      return event;
+    }
+
+    aloha.editor.stack.unshift(middleware);
   },
 
   addTagForm : function() {
@@ -43,8 +63,8 @@ App.Views.NoteEdit = Support.CompositeView.extend({
     that.model.set(formData);
 
     that.model.set({
-      title: $(event.currentTarget).find('#title').html(),
-      body: $(event.currentTarget).find('#body').html()
+      title: that.$('#title').text(),
+      body: that.$('#body').html()
     });
 
     var notebook = this.notebooks.getOrFetch(that.model.get("notebook_id"));

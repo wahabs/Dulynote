@@ -1,14 +1,7 @@
-# Dulynote
-
-[Site link][site]
-
-[Heroku link][heroku]
-
-[site]: http://www.dulynote.io/
-[heroku]: https://dulynote.herokuapp.com/
+# [Dulynote][site]
 
 ## Minimum Viable Product
-Dulynote is a clone of Evernote built on Rails and Backbone. Users can:
+[Dulynote][site] is a clone of Evernote built on Rails and Backbone. Users can:
 
 - [ ] Create accounts
 - [ ] Create sessions (log in)
@@ -82,6 +75,7 @@ as many bonus features as possible.
 - [ ] Notebook picture labels
 - [ ] Support for multiple open sessions
 
+[site]: http://www.dulynote.io/
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md

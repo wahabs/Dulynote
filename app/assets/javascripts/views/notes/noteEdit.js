@@ -10,7 +10,8 @@ App.Views.NoteEdit = Support.CompositeView.extend({
   },
 
   events: {
-    "submit #note-edit" : "submitNote"
+    "submit #note-edit" : "submitNote",
+    "submit #tag-form" : "submitNote" // to prevent losing data in the editable
   },
 
   render : function() {
@@ -72,7 +73,7 @@ App.Views.NoteEdit = Support.CompositeView.extend({
     that.model.save({}, {
       success: function() {
         notebook.notes().add(that.model, { merge: true });
-        Backbone.history.navigate("notebooks/" + notebook.id, { trigger: true })
+        // Backbone.history.navigate("notebooks/" + notebook.id, { trigger: true })
       }
     });
   }

@@ -22,7 +22,7 @@
 <label for="body"></label>
   <div name="body" id="body" class="editable"><%= note.get("body") %></div>
 
-<form id="note-edit">
+
 
   <div class="notebook-select">
     <label for="notebook">Notebook</label>
@@ -37,5 +37,4 @@
       </select>
   </div>
 
-  <input type="submit" value=<%= note.isNew() ? "Create!" : "Update" %>>
-</form>
+  <button id="update-note"><%= note.isNew() ? "Create!" : "Update" %></button>

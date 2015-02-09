@@ -10,8 +10,13 @@ App.Views.NoteEdit = Support.CompositeView.extend({
   },
 
   events: {
-    "submit #note-edit" : "submitNote",
-    "submit #tag-form" : "submitNote" // to prevent losing data in the editable
+    "click #update-note" : "submitNote",
+    "change .notebook-select" : "submitNote",
+    "submit #tag-form" : "submitNote"
+  },
+
+  testHandler : function(event) {
+    console.log(event)
   },
 
   render : function() {
@@ -24,6 +29,7 @@ App.Views.NoteEdit = Support.CompositeView.extend({
   },
 
   addEditable : function() {
+    var that = this;
     var editables = aloha.dom.query('.editable', document).map(aloha);
 
     _(editables).each(function (editable) {
@@ -57,24 +63,18 @@ App.Views.NoteEdit = Support.CompositeView.extend({
   },
 
   submitNote : function(event) {
-    event.preventDefault();
     var that = this;
-
-    var formData = $(event.currentTarget).serializeJSON();
-    that.model.set(formData);
 
     that.model.set({
       title: that.$('#title').text(),
-      body: that.$('#body').html()
+      body: that.$('#body').html(),
+      notebook_id: that.$('#notebook').val()
     });
 
     var notebook = this.notebooks.getOrFetch(that.model.get("notebook_id"));
     that.model.set("ord", notebook.notes().nextOrd());
     that.model.save({}, {
-      success: function() {
-        notebook.notes().add(that.model, { merge: true });
-        // Backbone.history.navigate("notebooks/" + notebook.id, { trigger: true })
-      }
+      success: function() { notebook.notes().add(that.model, { merge: true }) }
     });
   }
 

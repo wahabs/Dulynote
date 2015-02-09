@@ -7,8 +7,16 @@ class Notebook < ActiveRecord::Base
   )
 
   has_many :notes, dependent: :destroy
-
   validates :title, :ord, presence: true
   validates :title, uniqueness: true
+  before_validation :ensure_title
+
+  private
+
+    def ensure_title
+      if self.title.empty?
+        self.title = "Untitled Notebook #{ self.author.notebooks.length }"
+      end
+    end
 
 end

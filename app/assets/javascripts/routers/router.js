@@ -43,17 +43,17 @@ App.Routers.Router = Support.SwappingRouter.extend({
     this.swap(view);
   },
 
-  swapSideView: function(sideView) {
-    if (this.currentSide && this.currentSide.leave) {
-      this.currentSide.leave();
-    }
-
-    this.currentSide = sideView;
-    $(this.sideEl).html(this.currentSide.render().el);
-
-    if (this.currentSide && this.currentSide.swapped) {
-      this.currentSide.swapped();
-    }
-  }
+  // swapSideView: function(sideView) {
+  //   if (this.currentSide && this.currentSide.leave) {
+  //     this.currentSide.leave();
+  //   }
+  //
+  //   this.currentSide = sideView;
+  //   $(this.sideEl).html(this.currentSide.render().el);
+  //
+  //   if (this.currentSide && this.currentSide.swapped) {
+  //     this.currentSide.swapped();
+  //   }
+  // }
 
 })

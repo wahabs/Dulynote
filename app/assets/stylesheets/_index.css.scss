@@ -1,0 +1,7 @@
+.notebooks-list, .notes-list, .tags-list {
+ list-style-type: none;
+}
+
+.notebooks-list > li, .notes-list > li, .tags-list > li {
+ margin-left: -40px;
+}

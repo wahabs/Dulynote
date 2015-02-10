@@ -25,7 +25,6 @@ App.Views.NoteEdit = Support.CompositeView.extend({
     this.addTagForm();
     this.addTags();
     this.addEditable();
-    // Backbone.history.navigate("notebooks/" + this.model.get("notebook_id"), { trigger: true });
     return this;
   },
 

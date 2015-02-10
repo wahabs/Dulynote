@@ -1,4 +1,12 @@
 <h2>Notes</h2>
-<input id="note-search" name="search" placeholder="Search!" type="text" data-list=".notes-list">
+
+<form action="" class="search-form">
+    <div class="form-group has-feedback">
+    <label for="search" class="sr-only">Search</label>
+    <input type="text" class="form-control" name="search" id="note-search" data-list=".notes-list" placeholder="Search Notes!">
+      <span class="fa fa-search form-control-feedback"></span>
+  </div>
+</form>
+
 <ul class="notes-list"></ul>
 <div class="note-new"></div>

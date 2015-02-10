@@ -23,7 +23,6 @@
   notebooksIndex : function() {
     this.notebooks.fetch();
     this.tags.fetch();
-    this.notes.fetch();
     var view = new App.Views.NotebooksIndex({
       collection: this.notebooks, tags: this.tags
     });

@@ -32,6 +32,6 @@ App.Collections.Notes = Backbone.Collection.extend({
   nextOrd : function() {
     var lastOrd = Math.max.apply(null, this.pluck("ord"));
     return (lastOrd < 0) ? 0 : lastOrd + 1;
-  },
+  }
 
 })

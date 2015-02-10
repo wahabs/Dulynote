@@ -1,12 +1,36 @@
-<nav class="navbar navbar-default navbar-static-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
 
     <a class="navbar-brand" href="#">Dulynote</a>
 
+    <div class="collapse navbar-collapse">
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+    </ul>
+
       <ul class="nav navbar-nav navbar-right">
       <% if logged_in? %>
+
+        <li> <a class="format-action btn navbar-btn fa fa-lg fa-bold action-bold"></a> </li>
+        <li> <a class="format-action btn navbar-btn fa fa-lg fa-italic action-italic"></a> </li>
+        <li> <a class="format-action btn navbar-btn fa fa-lg fa-underline action-underline"></a> </li>
+        <li> <a class="format-action btn navbar-btn fa fa-lg fa-eraser action-unformat"></a> </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle format-action btn navbar-btn fa fa-lg fa-text-height" data-toggle="dropdown" role="button" area-expanded="false"> <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li> <a class="btn navbar-btn action-h1">36px</a> </li>
+            <li> <a class="btn navbar-btn action-h2">30px</a> </li>
+            <li> <a class="btn navbar-btn action-h3">24px</a> </li>
+            <li> <a class="btn navbar-btn action-h4">18px</a> </li>
+            <li> <a class="btn navbar-btn action-p">15px</a> </li>
+          </ul>
+        </li>
+
+        <li> <a class="format-action btn navbar-btn fa fa-lg fa-list-ol action-ol"></a> </li>
+        <li> <a class="format-action btn navbar-btn fa fa-lg fa-list-ul action-ul"></a> </li>
+        <li> <a class="format-action btn navbar-btn fa fa-lg fa-code action-pre"></a> </li>
+
         <li><%= button_to "Log Out", session_url, method: :delete, class: "btn btn-primary navbar-btn" %></li>
       <% else %>
         <li><%= link_to "Log In", new_session_url %></li>
@@ -24,4 +48,3 @@
 <%= flash[:errors].join("<br>").html_safe %>
 </div>
 <% end %>
-<%= link_to "Refresh", root_url %>

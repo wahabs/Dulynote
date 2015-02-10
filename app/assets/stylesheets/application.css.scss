@@ -14,10 +14,9 @@
  *= require_self
  */
 
- #body{
-   border: 1px solid gray;
-   min-height: 4em;
- }
+#content, #sidebar {
+  margin-top: 60px;
+}
 
  @import "variables";
  @import "bootstrap-sprockets";

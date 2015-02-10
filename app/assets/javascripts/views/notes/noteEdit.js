@@ -7,19 +7,27 @@ App.Views.NoteEdit = Support.CompositeView.extend({
     this.notebooks = options.notebooks;
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model.tags(), 'add', this.render);
+    this.listenTo(App.eventBus, "activateNote", this.activateNote);
     $('#update-note').on("click", this.submitNote.bind(this));
     $('.notebook-select').on("change", this.submitNote.bind(this));
+    $.cookie("activeNoteID") && this.activateNote($.cookie("activeNoteID"));
   },
 
   events: {
     "submit #tag-form" : "submitNote"
   },
 
-  testHandler : function(event) {
-    console.log(event)
+  activateNote : function(id) {
+    this.leave();
+    this.model.id = id;
+    this.model.fetch();
+    $.cookie("activeNoteID", id);
   },
 
   render : function() {
+
+    // if model exists, render default, else render new note button
+
     var content = this.template({ note: this.model, notebooks: this.notebooks });
     this.$el.html(content);
     this.addTagForm();

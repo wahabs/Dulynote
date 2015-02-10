@@ -8,21 +8,21 @@
     this.notebooks = new App.Collections.Notebooks();
     this.notes = new App.Collections.Notes();
     this.tags = new App.Collections.Tags();
+    this.notebooks.fetch();
+    this.notes.fetch();
+    this.tags.fetch();
     this.currentViews = {};
   },
 
   routes : {
-    "" : "notebooksIndex",
-    "notebooks" : "notebooksIndex",
-    "notebooks/:id" : "notebookShow",
-    "notes/new" : "noteNew",
-    "notes/:id/edit" : "noteEdit",
-    "tags/:id" : "tagShow"
+    ""               : "notebooksIndex",
+    "notebooks"      : "notebooksIndex",
+    "notebooks/:id"  : "notebookShow",
+    "notes/:id/edit" : "noteEdit", // replace with App.eventBus.trigger("activateNote", 2) in views
+    "tags/:id"       : "tagShow"
   },
 
   notebooksIndex : function() {
-    this.notebooks.fetch();
-    this.tags.fetch();
     var view = new App.Views.NotebooksIndex({
       collection: this.notebooks, tags: this.tags
     });
@@ -36,8 +36,6 @@
   },
 
   noteEdit : function(id) {
-    this.notebooks.fetch();
-    this.tags.fetch();
     var note = this.notes.getOrFetch(id);
     var view = new App.Views.NoteEdit({
       model: note, notebooks: this.notebooks, tags: this.tags
@@ -55,7 +53,6 @@
     if (this.currentViews[selector] && this.currentViews[selector].leave) {
       this.currentViews[selector].leave();
     }
-
     this.currentViews[selector] = newView;
     $(this.els[selector]).html(this.currentViews[selector].render().el);
 

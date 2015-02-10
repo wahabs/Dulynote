@@ -4,7 +4,8 @@ App.Views.NotesIndexItem = Support.CompositeView.extend({
   className: "note-index-item",
 
   events: {
-    "click button.note-delete" : "deleteNote"
+    "click button.note-delete" : "deleteNote",
+    "click a" : "activateNote"
   },
 
   render: function() {
@@ -19,6 +20,12 @@ App.Views.NotesIndexItem = Support.CompositeView.extend({
     Backbone.history.navigate(
       "notebooks/" + this.model.get("notebook_id"), { trigger: true }
     );
+  },
+
+  activateNote : function(event) {
+    event.preventDefault();
+    var id = $(event.currentTarget).data("id");
+    App.eventBus.trigger("activateNote", id);
   }
 
 })

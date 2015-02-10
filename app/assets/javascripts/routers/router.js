@@ -18,35 +18,43 @@
     ""               : "notebooksIndex",
     "notebooks"      : "notebooksIndex",
     "notebooks/:id"  : "notebookShow",
-    "notes/:id/edit" : "noteEdit", // replace with App.eventBus.trigger("activateNote", 2) in views
+    // "notes/:id/edit" : "noteEdit", // replace with App.eventBus.trigger("activateNote", 2) in views
     "tags/:id"       : "tagShow"
   },
 
+  swapNoteFromCookie : function() {
+
+    isNaN(parseInt($.cookie("activeNoteID"))) && $.cookie("activeNoteID", 1);
+
+    var contentView = new App.Views.NoteEdit({
+        model: new App.Models.Note(),
+        notebooks: this.notebooks,
+        tags: this.tags
+    });
+
+    this.swapView(contentView, "#content");
+  },
+
   notebooksIndex : function() {
-    var view = new App.Views.NotebooksIndex({
+    var sideView = new App.Views.NotebooksIndex({
       collection: this.notebooks, tags: this.tags
     });
-    this.swapView(view, "#sidebar");
+    this.swapView(sideView, "#sidebar");
+    this.swapNoteFromCookie();
   },
 
   notebookShow : function(id) {
     var notebook = this.notebooks.getOrFetch(id);
     var view = new App.Views.NotebookShow({ model: notebook });
     this.swapView(view, "#sidebar");
-  },
-
-  noteEdit : function(id) {
-    var note = this.notes.getOrFetch(id);
-    var view = new App.Views.NoteEdit({
-      model: note, notebooks: this.notebooks, tags: this.tags
-    });
-    this.swapView(view, "#content");
+    this.swapNoteFromCookie();
   },
 
   tagShow : function(id) {
     var tag = this.tags.getOrFetch(id);
     var view = new App.Views.TagShow({ model: tag });
     this.swapView(view, "#sidebar");
+    this.swapNoteFromCookie();
   },
 
   swapView : function(newView, selector) {

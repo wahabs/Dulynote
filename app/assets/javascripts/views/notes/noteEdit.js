@@ -10,7 +10,7 @@ App.Views.NoteEdit = Support.CompositeView.extend({
     this.listenTo(App.eventBus, "activateNote", this.activateNote);
     $('#update-note').on("click", this.submitNote.bind(this));
     $('.notebook-select').on("change", this.submitNote.bind(this));
-    $.cookie("activeNoteID") && this.activateNote($.cookie("activeNoteID"));
+    $.cookie("activeNoteID") && this.activateNote(parseInt($.cookie("activeNoteID")));
   },
 
   events: {
@@ -18,14 +18,13 @@ App.Views.NoteEdit = Support.CompositeView.extend({
   },
 
   activateNote : function(id) {
-    this.leave();
+    // this.leave();
     this.model.id = id;
     this.model.fetch();
     $.cookie("activeNoteID", id);
   },
 
   render : function() {
-
     // if model exists, render default, else render new note button
 
     var content = this.template({ note: this.model, notebooks: this.notebooks });

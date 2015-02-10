@@ -7,7 +7,7 @@ class Notebook < ActiveRecord::Base
   )
 
   has_many :notes, dependent: :destroy
-  validates :title, :ord, presence: true
+  validates :title, presence: true
   validates :title, uniqueness: true
   before_validation :ensure_title
 

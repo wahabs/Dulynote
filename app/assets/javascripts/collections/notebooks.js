@@ -1,7 +1,6 @@
 App.Collections.Notebooks = Backbone.Collection.extend({
   url: "api/notebooks",
   model: App.Models.Notebook,
-  comparator: "ord",
 
   notes : function() {
     var that = this;
@@ -27,11 +26,6 @@ App.Collections.Notebooks = Backbone.Collection.extend({
     }
 
     return notebook;
-  },
-
-  nextOrd : function() {
-    var lastOrd = Math.max.apply(null, this.pluck("ord"));
-    return (lastOrd < 0) ? 0 : lastOrd + 1;
   }
 
 })

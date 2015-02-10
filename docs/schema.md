@@ -6,7 +6,6 @@ column name | data type | details
 id          | integer   | not null, primary key
 owner_id    | integer   | not null, foreign key (references users)
 title       | string    | not null
-ord         | integer   | not null
 
 
 ## note
@@ -16,7 +15,6 @@ id          | integer   | not null, primary key
 notebook_id | integer   | not null, foreign key (references notebooks)
 title       | string    | not null
 body        | text      |
-ord         | integer   | not null
 
 ## tags
 column name | data type | details

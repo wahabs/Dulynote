@@ -17,7 +17,6 @@ App.Views.NotebookForm = Backbone.View.extend({
     var formData = $(event.currentTarget).serializeJSON();
     var notebook = new App.Models.Notebook();
     notebook.set(formData);
-    notebook.set("ord", that.collection.nextOrd());
     notebook.save({}, {
       success: function() {
         that.collection.add(notebook, { merge: true });

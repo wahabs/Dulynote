@@ -11,14 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150205191947) do
+ActiveRecord::Schema.define(version: 20150210234448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "notebooks", force: :cascade do |t|
     t.string   "title",      null: false
-    t.integer  "ord",        null: false
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -29,7 +28,6 @@ ActiveRecord::Schema.define(version: 20150205191947) do
   create_table "notes", force: :cascade do |t|
     t.string   "title",       null: false
     t.text     "body"
-    t.integer  "ord",         null: false
     t.integer  "notebook_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

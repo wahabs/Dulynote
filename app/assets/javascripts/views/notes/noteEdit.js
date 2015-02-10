@@ -81,7 +81,6 @@ App.Views.NoteEdit = Support.CompositeView.extend({
     });
 
     var notebook = this.notebooks.getOrFetch(that.model.get("notebook_id"));
-    that.model.set("ord", notebook.notes().nextOrd());
     that.model.save({}, {
       success: function() { notebook.notes().add(that.model, { merge: true }) }
     });

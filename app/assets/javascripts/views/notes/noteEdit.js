@@ -7,11 +7,11 @@ App.Views.NoteEdit = Support.CompositeView.extend({
     this.notebooks = options.notebooks;
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model.tags(), 'add', this.render);
+    $('#update-note').on("click", this.submitNote.bind(this));
+    $('.notebook-select').on("change", this.submitNote.bind(this));
   },
 
   events: {
-    "click #update-note" : "submitNote",
-    "change .notebook-select" : "submitNote",
     "submit #tag-form" : "submitNote"
   },
 
@@ -25,6 +25,7 @@ App.Views.NoteEdit = Support.CompositeView.extend({
     this.addTagForm();
     this.addTags();
     this.addEditable();
+    // Backbone.history.navigate("notebooks/" + this.model.get("notebook_id"), { trigger: true });
     return this;
   },
 

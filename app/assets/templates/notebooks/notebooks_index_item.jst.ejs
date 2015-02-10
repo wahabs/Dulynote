@@ -1,2 +1,4 @@
-<h4><a href=<%= "#/notebooks/" + notebook.id %>> <%= notebook.escape("title") %> </a></h4>
-<button class="fa fa-lg fa-close notebook-delete"></button>
+<a href=<%= "#/notebooks/" + notebook.id %>>
+  <i class="fa fa-lg fa-book fa-fw"></i>&nbsp; <%= notebook.escape("title") %>
+</a>
+<a class="btn fa fa-lg fa-close notebook-delete"></a>

@@ -14,10 +14,15 @@
  *= require_self
  */
 
+
+  @import "variables";
+  @import "bootstrap-sprockets";
+  @import "bootstrap";
+
 #content, #sidebar, #new-user, #new-session {
   margin-top: 60px;
 }
 
- @import "variables";
- @import "bootstrap-sprockets";
- @import "bootstrap";
+.nav > li > a {
+  display: inline-block;
+}

@@ -8,7 +8,7 @@ App.Views.TagsIndexItem = Support.CompositeView.extend({
   },
 
   events: {
-    "click button.tag-delete" : "deleteTag"
+    "click .tag-delete" : "deleteTag"
   },
 
   render: function() {

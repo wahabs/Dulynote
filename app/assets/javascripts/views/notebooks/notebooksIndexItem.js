@@ -4,7 +4,7 @@ App.Views.NotebooksIndexItem = Support.CompositeView.extend({
   className: "notebook-index-item",
 
   events: {
-    "click button.notebook-delete" : "deleteNotebook"
+    "click .notebook-delete" : "deleteNotebook"
   },
 
   render: function() {

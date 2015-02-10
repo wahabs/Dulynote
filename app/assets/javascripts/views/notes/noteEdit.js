@@ -20,8 +20,10 @@ App.Views.NoteEdit = Support.CompositeView.extend({
   activateNote : function(id) {
     // this.leave();
     this.model.id = id;
-    this.model.fetch();
-    $.cookie("activeNoteID", id);
+    this.model.fetch({
+      success : function() { $.cookie("activeNoteID", id) },
+      error : function() { $.removeCookie("activeNoteID") }
+    });
   },
 
   render : function() {

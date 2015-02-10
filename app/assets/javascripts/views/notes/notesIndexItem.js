@@ -4,7 +4,7 @@ App.Views.NotesIndexItem = Support.CompositeView.extend({
   className: "note-index-item",
 
   events: {
-    "click button.note-delete" : "deleteNote",
+    "click .note-delete" : "deleteNote",
     "click a" : "activateNote"
   },
 

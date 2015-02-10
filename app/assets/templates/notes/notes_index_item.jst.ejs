@@ -1,2 +1,4 @@
-<h4><a data-id="<%= note.id %>" href="#"><%= note.escape("title") %></a></h4>
-<button class="fa fa-lg fa-close note-delete"></button>
+<a data-id="<%= note.id %>" href="#">
+  <i class="fa fa-lg fa-leaf fa-fw"></i>&nbsp; <%= note.escape("title") %>
+</a>
+<a class="btn fa fa-lg fa-close note-delete"></a>

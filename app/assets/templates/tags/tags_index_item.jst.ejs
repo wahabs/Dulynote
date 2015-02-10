@@ -1,2 +1,4 @@
-<h4><a href=<%= "#/tags/" + tag.id %>> <%= tag.escape("label") %> </a></h4>
-<button class="fa fa-lg fa-close tag-delete"></button>
+<a href=<%= "#/tags/" + tag.id %>>
+  <i class="fa fa-lg fa-tag fa-fw"></i>&nbsp; <%= tag.escape("label") %>
+</a>
+<a class="btn fa fa-lg fa-close tag-delete"></a>

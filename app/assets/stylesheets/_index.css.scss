@@ -1,7 +1,51 @@
+
+.nav-sidebar {
+    width: 100%;
+    padding: 8px 0;
+    border-right: 1px solid #ddd;
+}
+.nav-sidebar a {
+    color: #333;
+    -webkit-transition: all 0.08s linear;
+    -moz-transition: all 0.08s linear;
+    -o-transition: all 0.08s linear;
+    transition: all 0.08s linear;
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px;
+}
+.nav-sidebar .active a {
+    cursor: default;
+    background-color: #428bca;
+    color: #fff;
+    text-shadow: 1px 1px 1px #666;
+}
+.nav-sidebar .active a:hover {
+    background-color: #428bca;
+}
+.nav-sidebar .text-overflow a,
+.nav-sidebar .text-overflow .media-body {
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
 .notebooks-list, .notes-list, .tags-list {
- list-style-type: none;
+  list-style-type: none;
 }
 
 .notebooks-list > li, .notes-list > li, .tags-list > li {
- margin-left: -40px;
+  margin-left: -10px;
+  font-size: 16px;
+}
+
+.notebook-delete, .note-delete, .tag-delete {
+  opacity: 0;
+}
+
+.notebooks-list > li:hover > .notebook-delete,
+.notes-list > li:hover > .note-delete,
+.tags-list > li:hover > .tag-delete {
+  opacity: 100;
 }

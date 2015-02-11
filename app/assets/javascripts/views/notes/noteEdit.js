@@ -14,7 +14,17 @@ App.Views.NoteEdit = Support.CompositeView.extend({
 
   events: {
     "submit #tag-form" : "submitNote",
-    "change #notebook" : "submitNote"
+    "change #notebook" : "submitNote",
+    "click label.btn" : "updateSticker"
+  },
+
+  updateSticker : function(event) {
+    var that = this;
+    $("#stickerModal").modal("hide");
+    that.$el.on("hidden.bs.modal", function() {
+      that.model.set("sticker", $(event.currentTarget).find("input").val());
+      that.submitNote();
+    })
   },
 
   activateNote : function(id) {

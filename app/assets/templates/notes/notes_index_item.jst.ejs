@@ -1,4 +1,5 @@
 <a data-id="<%= note.id %>" href="#">
-  <i class="fa fa-lg fa-leaf fa-fw"></i>&nbsp; <%= note.escape("title") %>
+  <i class="fa fa-lg fa-<%= note.escape("sticker") %> fa-fw"></i>&nbsp;
+  <%= note.escape("title") %>
 </a>
 <a class="btn fa fa-lg fa-close note-delete"></a>

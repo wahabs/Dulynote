@@ -26,6 +26,11 @@
   display: inline-block;
 }
 
+.nav > li > a.fa-close:hover {
+  background-color: white;
+  color: black;
+}
+
 .fa-plus:hover {
   color: #2C3E50;
 }

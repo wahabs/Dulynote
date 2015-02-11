@@ -16,6 +16,7 @@ App.Views.NoteNew = Backbone.View.extend({
     var that = this;
     var note = new App.Models.Note({
       title: that.$("#title").val(),
+      sticker: "star",
       notebook_id: that.model.id
     });
     note.save({}, {

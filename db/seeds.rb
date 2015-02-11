@@ -5,12 +5,12 @@ nb2 = u1.notebooks.create!(title: "Notebook B")
 nb3 = u1.notebooks.create!(title: "Notebook C")
 
 
-n1 = nb1.notes.create!(title: "Note A1", body: "Body of A1")
-n2 = nb1.notes.create!(title: "Note A2", body: "Body of A2")
-n3 = nb2.notes.create!(title: "Note B1", body: "Body of B1")
-n4 = nb2.notes.create!(title: "Note B2", body: "Body of B2")
-n5 = nb3.notes.create!(title: "Note C1", body: "Body of C1")
-n6 = nb3.notes.create!(title: "Note C2", body: "Body of C2")
+n1 = nb1.notes.create!(title: "Note A1", body: "Body of A1", sticker: "star")
+n2 = nb1.notes.create!(title: "Note A2", body: "Body of A2", sticker: "plus")
+n3 = nb2.notes.create!(title: "Note B1", body: "Body of B1", sticker: "flag")
+n4 = nb2.notes.create!(title: "Note B2", body: "Body of B2", sticker: "heart")
+n5 = nb3.notes.create!(title: "Note C1", body: "Body of C1", sticker: "moon-o")
+n6 = nb3.notes.create!(title: "Note C2", body: "Body of C2", sticker: "rocket")
 
 
 t1 = u1.tags.create!(label: "Everything")

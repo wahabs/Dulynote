@@ -20,11 +20,11 @@ App.Views.NoteEdit = Support.CompositeView.extend({
 
   updateSticker : function(event) {
     var that = this;
-    $("#stickerModal").modal("hide");
-    that.$el.on("hidden.bs.modal", function() {
+    $.when($("#stickerModal").modal("hide")).then(function() {
       that.model.set("sticker", $(event.currentTarget).find("input").val());
       that.submitNote();
-    })
+    });
+    App.eventBus.trigger("updateSticker");
   },
 
   activateNote : function(id) {

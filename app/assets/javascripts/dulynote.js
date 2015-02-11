@@ -10,7 +10,7 @@ window.App = {
        $rootEl : $("#content"),
        $sideEl : $("#sidebar")
     });
-    
+
     Backbone.history.start();
   }
 };

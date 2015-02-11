@@ -3,9 +3,18 @@ App.Views.NotesIndexItem = Support.CompositeView.extend({
   tagName: "li",
   className: "note-index-item",
 
+  initialize : function(options) {
+    this.listenTo(App.eventBus, "updateSticker", this.updateSticker);
+  },
+
   events: {
     "click .note-delete" : "deleteNote",
     "click a" : "activateNote"
+  },
+
+  updateSticker : function() {
+    this.model.fetch();
+    this.render();
   },
 
   render: function() {

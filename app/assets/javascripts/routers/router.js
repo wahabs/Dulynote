@@ -18,12 +18,10 @@
     ""               : "notebooksIndex",
     "notebooks"      : "notebooksIndex",
     "notebooks/:id"  : "notebookShow",
-    // "notes/:id/edit" : "noteEdit", // replace with App.eventBus.trigger("activateNote", 2) in views
     "tags/:id"       : "tagShow"
   },
 
   swapNoteFromCookie : function() {
-
     isNaN(parseInt($.cookie("activeNoteID"))) && $.cookie("activeNoteID", 1);
 
     var contentView = new App.Views.NoteEdit({

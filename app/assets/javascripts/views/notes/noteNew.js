@@ -2,7 +2,7 @@ App.Views.NoteNew = Backbone.View.extend({
   template: JST["notes/note_new"],
 
   events: {
-    "submit #note-new" : "createNote"
+    "click a" : "createNote"
   },
 
   render : function() {
@@ -14,9 +14,10 @@ App.Views.NoteNew = Backbone.View.extend({
   createNote : function(event) {
     event.preventDefault();
     var that = this;
-    var formData = $(event.currentTarget).serializeJSON();
-    var note = new App.Models.Note({ notebook_id: that.model.id });
-    note.set(formData);
+    var note = new App.Models.Note({
+      title: that.$("#title").val(),
+      notebook_id: that.model.id
+    });
     note.save({}, {
       success: function() {
         that.collection.add(note, { merge: true });

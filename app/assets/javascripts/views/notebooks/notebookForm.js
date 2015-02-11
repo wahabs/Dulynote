@@ -2,7 +2,7 @@ App.Views.NotebookForm = Backbone.View.extend({
   template: JST["notebooks/notebook_form"],
 
   events: {
-    "submit #notebook-form" : "createNotebook"
+    "click a" : "createNotebook"
   },
 
   render : function() {
@@ -14,9 +14,7 @@ App.Views.NotebookForm = Backbone.View.extend({
   createNotebook : function(event) {
     event.preventDefault();
     var that = this;
-    var formData = $(event.currentTarget).serializeJSON();
-    var notebook = new App.Models.Notebook();
-    notebook.set(formData);
+    var notebook = new App.Models.Notebook({ title: that.$("#title").val() });
     notebook.save({}, {
       success: function() {
         that.collection.add(notebook, { merge: true });

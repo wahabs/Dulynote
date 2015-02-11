@@ -10,11 +10,15 @@ App.Views.NotesIndex = Support.CompositeView.extend({
   render : function() {
     var content = this.template();
     this.$el.html(content);
-    this.collection.each( function(note) { this.addNote(note) }, this);
+    this.addNotes();
     if (this.model.constructor === App.Models.Notebook) {
       this.addNoteNew();
     }
     return this;
+  },
+
+  addNotes : function() {
+    this.collection.each( function(note) { this.addNote(note) }, this);
   },
 
   addNote : function(note) {
@@ -27,12 +31,11 @@ App.Views.NotesIndex = Support.CompositeView.extend({
   },
 
   addNoteNew : function() {
-    var that = this;
-    this.appendChildTo(
+    this.appendChild(
       new App.Views.NoteNew({
          model: this.model,
          collection: this.collection
-    }), ".note-new");
+    }));
   }
 
 })

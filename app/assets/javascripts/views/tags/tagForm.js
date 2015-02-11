@@ -2,7 +2,7 @@ App.Views.TagForm = Backbone.View.extend({
   template: JST["tags/tag_form"],
 
   events: {
-    "submit #tag-form" : "submitTag"
+    "click a" : "submitTag"
   },
 
   render : function() {
@@ -16,8 +16,8 @@ App.Views.TagForm = Backbone.View.extend({
     var that = this;
     var note = that.model;
     var tags = that.collection;
-    var formData = $(event.currentTarget).serializeJSON();
-    var tag = tags.findWhere({ label: formData.label }) || new App.Models.Tag(formData);
+    var label = that.$("#label").val()
+    var tag = tags.findWhere({ label: label }) || new App.Models.Tag({ label: label });
     tag.set("note_id", note.id)
     tag.save({}, {
       success : function() { note.tags().add(tag, { merge: true }) },

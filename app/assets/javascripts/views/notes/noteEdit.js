@@ -31,8 +31,8 @@ App.Views.NoteEdit = Support.CompositeView.extend({
 
     var content = this.template({ note: this.model, notebooks: this.notebooks });
     this.$el.html(content);
-    this.addTagForm();
     this.addTags();
+    this.addTagForm();
     this.addEditable();
     return this;
   },
@@ -64,7 +64,7 @@ App.Views.NoteEdit = Support.CompositeView.extend({
   },
 
   addTagForm : function() {
-    this.appendChild(new App.Views.TagForm({ model: this.model, collection: this.tags }));
+    this.appendChildTo(new App.Views.TagForm({ model: this.model, collection: this.tags }), ".note-tags");
   },
 
   addTags : function() {

@@ -9,12 +9,12 @@ App.Views.NoteEdit = Support.CompositeView.extend({
     this.listenTo(this.model.tags(), 'add', this.render);
     this.listenTo(App.eventBus, "activateNote", this.activateNote);
     $('#update-note').on("click", this.submitNote.bind(this));
-    $('.notebook-select').on("change", this.submitNote.bind(this));
     $.cookie("activeNoteID") && this.activateNote(parseInt($.cookie("activeNoteID")));
   },
 
   events: {
-    "submit #tag-form" : "submitNote"
+    "submit #tag-form" : "submitNote",
+    "change #notebook" : "submitNote"
   },
 
   activateNote : function(id) {
@@ -27,7 +27,7 @@ App.Views.NoteEdit = Support.CompositeView.extend({
   },
 
   render : function() {
-    // if model exists, render default, else render new note button
+    // TODO: if model exists, render default, else render new note button
 
     var content = this.template({ note: this.model, notebooks: this.notebooks });
     this.$el.html(content);
@@ -64,11 +64,17 @@ App.Views.NoteEdit = Support.CompositeView.extend({
   },
 
   addTagForm : function() {
-    this.appendChildTo(new App.Views.TagForm({ model: this.model, collection: this.tags }), ".note-tags");
+    this.appendChildTo(new App.Views.TagForm({
+      model: this.model,
+      collection: this.tags
+    }), ".note-tags");
   },
 
   addTags : function() {
-    this.appendChildTo(new App.Views.TagsIndex({ collection: this.model.tags(), note: this.model }), ".note-tags");
+    this.appendChildTo(new App.Views.TagsIndex({
+      collection: this.model.tags(),
+      note: this.model
+    }), ".note-tags");
   },
 
   submitNote : function(event) {

@@ -1,5 +1,18 @@
 <div class="row">
 
+  <div class="notebook-select col-xs-4 col-xs-offset-8">
+    <label for="notebook">Set Notebook</label>
+      <select class="form-control" id="notebook" name="notebook_id">
+        <% notebooks.each(function(notebook) { %>
+          <option
+            value="<%= notebook.id %>"
+            <%= (note.get("notebook_id") === notebook.id) ? "selected" : "" %>>
+          <%= notebook.escape("title") %>
+          </option>
+        <% }) %>
+      </select>
+  </div>
+
     <div class="col-xs-12">
         <div class="box">
             <div class="box-icon">
@@ -17,17 +30,8 @@
     </div>
 </div>
 
-<div class="notebook-select">
-  <label for="notebook">Notebook</label>
-    <select id="notebook" name="notebook_id">
-      <% notebooks.each(function(notebook) { %>
-        <option
-          value="<%= notebook.id %>"
-          <%= (note.get("notebook_id") === notebook.id) ? "selected" : "" %>>
-        <%= notebook.escape("title") %>
-        </option>
-      <% }) %>
-    </select>
-</div>
+
+
+<br><br><br><br>
 
 <div class="note-tags"></div>

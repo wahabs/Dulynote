@@ -8,16 +8,16 @@
       <li id="logo"><img src="<%= image_path("logo-inverted.png") %>" alt="Logo" style="width:40px;height:40px"></img></li>
     </ul>
 
-    <a class="navbar-brand" href="#">Dulynote</a>
+    <a class="navbar-brand" href=<%= logged_in? ? "#" : root_url %>>Dulynote</a>
 
       <ul class="nav navbar-nav navbar-right">
       <% if logged_in? %>
 
-        <li> <a class="btn btn-primary navbar-btn fa fa-lg fa-save" id="update-note"></a> </li>
-        <li> <a class="format-action btn btn-primary navbar-btn fa fa-lg fa-bold action-bold"></a> </li>
-        <li> <a class="format-action btn btn-primary navbar-btn fa fa-lg fa-italic action-italic"></a> </li>
-        <li> <a class="format-action btn btn-primary navbar-btn fa fa-lg fa-underline action-underline"></a> </li>
-        <li> <a class="format-action btn btn-primary navbar-btn fa fa-lg fa-eraser action-unformat"></a> </li>
+        <li> <a class="btn navbar-btn fa fa-lg fa-save" id="update-note"></a> </li>
+        <li> <a class="format-action btn navbar-btn fa fa-lg fa-bold action-bold"></a> </li>
+        <li> <a class="format-action btn navbar-btn fa fa-lg fa-italic action-italic"></a> </li>
+        <li> <a class="format-action btn navbar-btn fa fa-lg fa-underline action-underline"></a> </li>
+        <li> <a class="format-action btn navbar-btn fa fa-lg fa-eraser action-unformat"></a> </li>
 
         <li class="dropdown">
           <a class="dropdown-toggle format-action btn navbar-btn fa fa-lg fa-text-height" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="caret"></span></a>
@@ -30,9 +30,9 @@
           </ul>
         </li>
 
-        <li> <a class="format-action btn btn-primary navbar-btn fa fa-lg fa-list-ol action-ol"></a> </li>
-        <li> <a class="format-action btn btn-primary navbar-btn fa fa-lg fa-list-ul action-ul"></a> </li>
-        <li> <a class="format-action btn btn-primary navbar-btn fa fa-lg fa-code action-pre"></a> </li>
+        <li> <a class="format-action btn navbar-btn fa fa-lg fa-list-ol action-ol"></a> </li>
+        <li> <a class="format-action btn navbar-btn fa fa-lg fa-list-ul action-ul"></a> </li>
+        <li> <a class="format-action btn navbar-btn fa fa-lg fa-code action-pre"></a> </li>
 
         <li><%= button_to "Log Out", session_url, method: :delete, class: "btn btn-primary navbar-btn" %></li>
       <% else %>

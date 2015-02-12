@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     )
     if @user
       log_in_user!(@user)
-      redirect_to root_url
+      redirect_to main_url
     else
       @user = User.new
       flash.now[:errors] ||= []
@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out_user!
-    redirect_to new_session_url
+    redirect_to root_url
   end
 
 end

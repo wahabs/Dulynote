@@ -18,7 +18,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-#content, #sidebar, #new-user, #new-session {
+// @font-face {
+//   font-family: lato-font-face;
+//   src: url(http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext);
+// }
+
+#content, #sidebar, #new-user, #new-session, #landing {
   margin-top: 60px;
 }
 

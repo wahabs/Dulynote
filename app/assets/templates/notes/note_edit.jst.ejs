@@ -15,26 +15,22 @@
 
     <div class="col-xs-12">
         <div class="box">
-            <div class="box-icon">
-                <span class="fa fa-4x fa-<%= note.escape("sticker") %>">
-                </span>
-            </div>
+
+            <button class="btn btn-primary sticker-button box-icon" data-toggle="modal" data-target="#stickerModal">
+              <span class="fa fa-4x fa-<%= note.escape("sticker") %>"></span>
+            </button>
 
             <div class="info">
-
               <label for="title"></label>
                 <h1 class="text-center"><div name="title" id="title" class="editable"><%= note.get("title") %></div></h1>
                 <label for="body"></label>
                   <div name="body" id="body" class="editable"><%= note.get("body") %></div>
             </div>
+
         </div>
     </div>
 </div>
 
-
-
-<!-- Button trigger modal -->
-<button type="button" class="btn sticker-button" data-toggle="modal" data-target="#stickerModal"></button>
 
 <!-- Modal -->
 <div class="modal fade" id="stickerModal" tabindex="-1" role="dialog" aria-labelledby="stickerModalLabel" aria-hidden="true">
@@ -79,6 +75,5 @@
 </div>
 
 
-<br><br><br><br>
 
 <div class="note-tags"></div>

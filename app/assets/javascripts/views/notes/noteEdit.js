@@ -20,11 +20,13 @@ App.Views.NoteEdit = Support.CompositeView.extend({
 
   updateSticker : function(event) {
     var that = this;
-    $.when($("#stickerModal").modal("hide")).then(function() {
-      that.model.set("sticker", $(event.currentTarget).find("input").val());
-      that.submitNote();
-    });
-    App.eventBus.trigger("updateSticker");
+    that.model.set("sticker", $(event.currentTarget).find("input").val());
+    that.submitNote();
+    this.$("#stickerModal").modal("hide")
+    // $.when($("#stickerModal").modal("hide")).then(function() {
+    //   that.model.set("sticker", $(event.currentTarget).find("input").val());
+    //   that.submitNote();
+    // });
   },
 
   activateNote : function(id) {
@@ -98,7 +100,10 @@ App.Views.NoteEdit = Support.CompositeView.extend({
 
     var notebook = this.notebooks.getOrFetch(that.model.get("notebook_id"));
     that.model.save({}, {
-      success: function() { notebook.notes().add(that.model, { merge: true }) }
+      success: function() {
+        notebook.notes().add(that.model, { merge: true });
+        App.eventBus.trigger("updateNote");
+      }
     });
   }
 

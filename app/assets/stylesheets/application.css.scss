@@ -34,3 +34,12 @@
 .fa-plus:hover {
   color: #2C3E50;
 }
+
+.sticker-button {
+  border-radius: 50%;
+  display: block;
+}
+
+.box-icon > span::before {
+  margin-left: 7px;
+}

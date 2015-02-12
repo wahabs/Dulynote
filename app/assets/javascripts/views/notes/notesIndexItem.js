@@ -4,7 +4,7 @@ App.Views.NotesIndexItem = Support.CompositeView.extend({
   className: "note-index-item",
 
   initialize : function(options) {
-    this.listenTo(App.eventBus, "updateSticker", this.updateSticker);
+    this.listenTo(App.eventBus, "updateNote", this.updateNote);
   },
 
   events: {
@@ -12,7 +12,7 @@ App.Views.NotesIndexItem = Support.CompositeView.extend({
     "click a" : "activateNote"
   },
 
-  updateSticker : function() {
+  updateNote : function() {
     this.model.fetch();
     this.render();
   },

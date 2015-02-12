@@ -16,9 +16,9 @@
     <div class="col-xs-12">
         <div class="box">
 
-            <button class="btn btn-primary sticker-button box-icon" data-toggle="modal" data-target="#stickerModal">
+            <div class="box-icon" data-toggle="modal" data-target="#sticker-modal">
               <span class="fa fa-4x fa-<%= note.escape("sticker") %>"></span>
-            </button>
+            </div>
 
             <div class="info">
               <label for="title"></label>
@@ -32,8 +32,8 @@
 </div>
 
 
-<!-- Modal -->
-<div class="modal fade" id="stickerModal" tabindex="-1" role="dialog" aria-labelledby="stickerModalLabel" aria-hidden="true">
+<!-- Sticker Modal -->
+<div class="modal fade" id="sticker-modal" tabindex="-1" role="dialog" aria-labelledby="stickerModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -44,29 +44,30 @@
       <div class="modal-body">
           <div class="btn-group" data-toggle="buttons">
 
-            <label class="btn btn-primary"><input type="radio" value="star"><span><i class="fa fa-lg fa-star"></i></span></label>
-            <label class="btn btn-primary"><input type="radio" value="music"><span><i class="fa fa-lg fa-music"></i></span></label>
-            <label class="btn btn-primary"><input type="radio" value="bookmark"><span><i class="fa fa-lg fa-bookmark"></i></span></label>
-            <label class="btn btn-primary"><input type="radio" value="calendar"><span><i class="fa fa-lg fa-calendar"></i></span></label>
-            <label class="btn btn-primary"><input type="radio" value="camera"><span><i class="fa fa-lg fa-camera"></i></span></label>
+            <button data-dismiss="modal" class="sticker-choose btn btn-primary"><input type="radio" value="star"><span><i class="fa fa-lg fa-star"></i></span></button>
+            <button data-dismiss="modal" class="sticker-choose btn btn-primary"><input type="radio" value="music"><span><i class="fa fa-lg fa-music"></i></span></button>
+            <button data-dismiss="modal" class="sticker-choose btn btn-primary"><input type="radio" value="bookmark"><span><i class="fa fa-lg fa-bookmark"></i></span></button>
+            <button data-dismiss="modal" class="sticker-choose btn btn-primary"><input type="radio" value="calendar"><span><i class="fa fa-lg fa-calendar"></i></span></button>
+            <button data-dismiss="modal" class="sticker-choose btn btn-primary"><input type="radio" value="camera"><span><i class="fa fa-lg fa-camera"></i></span></button>
 
-            <label class="btn btn-primary"><input type="radio" value="cutlery"><span><i class="fa fa-lg fa-cutlery"></i></span></label>
-            <label class="btn btn-primary"><input type="radio" value="diamond"><span><i class="fa fa-lg fa-diamond"></i></span></label>
-            <label class="btn btn-primary"><input type="radio" value="flag"><span><i class="fa fa-lg fa-flag"></i></span></label>
-            <label class="btn btn-primary"><input type="radio" value="gamepad"><span><i class="fa fa-lg fa-gamepad"></i></span></label>
-            <label class="btn btn-primary"><input type="radio" value="magic"><span><i class="fa fa-lg fa-magic"></i></span></label>
+            <button data-dismiss="modal" class="sticker-choose btn btn-primary"><input type="radio" value="cutlery"><span><i class="fa fa-lg fa-cutlery"></i></span></button>
+            <button data-dismiss="modal" class="sticker-choose btn btn-primary"><input type="radio" value="diamond"><span><i class="fa fa-lg fa-diamond"></i></span></button>
+            <button data-dismiss="modal" class="sticker-choose btn btn-primary"><input type="radio" value="flag"><span><i class="fa fa-lg fa-flag"></i></span></button>
+            <button data-dismiss="modal" class="sticker-choose btn btn-primary"><input type="radio" value="gamepad"><span><i class="fa fa-lg fa-gamepad"></i></span></button>
+            <button data-dismiss="modal" class="sticker-choose btn btn-primary"><input type="radio" value="magic"><span><i class="fa fa-lg fa-magic"></i></span></button>
 
-            <label class="btn btn-primary"><input type="radio" value="globe"><span><i class="fa fa-lg fa-globe"></i></span></label>
-            <label class="btn btn-primary"><input type="radio" value="heart"><span><i class="fa fa-lg fa-heart"></i></span></label>
-            <label class="btn btn-primary"><input type="radio" value="leaf"><span><i class="fa fa-lg fa-leaf"></i></span></label>
-            <label class="btn btn-primary"><input type="radio" value="moon-o"><span><i class="fa fa-lg fa-moon-o"></i></span></label>
-            <label class="btn btn-primary"><input type="radio" value="paper-plane"><span><i class="fa fa-lg fa-paper-plane"></i></span></label>
+            <button data-dismiss="modal" class="sticker-choose btn btn-primary"><input type="radio" value="globe"><span><i class="fa fa-lg fa-globe"></i></span></button>
+            <button data-dismiss="modal" class="sticker-choose btn btn-primary"><input type="radio" value="heart"><span><i class="fa fa-lg fa-heart"></i></span></button>
+            <button data-dismiss="modal" class="sticker-choose btn btn-primary"><input type="radio" value="leaf"><span><i class="fa fa-lg fa-leaf"></i></span></button>
+            <button data-dismiss="modal" class="sticker-choose btn btn-primary"><input type="radio" value="moon-o"><span><i class="fa fa-lg fa-moon-o"></i></span></button>
+            <button data-dismiss="modal" class="sticker-choose btn btn-primary"><input type="radio" value="paper-plane"><span><i class="fa fa-lg fa-paper-plane"></i></span></button>
 
-            <label class="btn btn-primary"><input type="radio" value="money"><span><i class="fa fa-lg fa-money"></i></span></label>
-            <label class="btn btn-primary"><input type="radio" value="plane"><span><i class="fa fa-lg fa-plane"></i></span></label>
-            <label class="btn btn-primary"><input type="radio" value="quote-left"><span><i class="fa fa-lg fa-quote-left"></i></span></label>
-            <label class="btn btn-primary"><input type="radio" value="smile-o"><span><i class="fa fa-lg fa-smile-o"></i></span></label>
-            <label class="btn btn-primary"><input type="radio" value="trophy"><span><i class="fa fa-lg fa-trophy"></i></span></label>
+            <button data-dismiss="modal" class="sticker-choose btn btn-primary"><input type="radio" value="money"><span><i class="fa fa-lg fa-money"></i></span></button>
+            <button data-dismiss="modal" class="sticker-choose btn btn-primary"><input type="radio" value="plane"><span><i class="fa fa-lg fa-plane"></i></span></button>
+            <button data-dismiss="modal" class="sticker-choose btn btn-primary"><input type="radio" value="quote-left"><span><i class="fa fa-lg fa-quote-left"></i></span></button>
+            <button data-dismiss="modal" class="sticker-choose btn btn-primary"><input type="radio" value="smile-o"><span><i class="fa fa-lg fa-smile-o"></i></span></button>
+            <button data-dismiss="modal" class="sticker-choose btn btn-primary"><input type="radio" value="trophy"><span><i class="fa fa-lg fa-trophy"></i></span></button>
+
           </div>
       </div>
 

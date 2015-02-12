@@ -21,6 +21,13 @@
   width: 100px;
   margin-top: -61px;
 }
+
+.box-icon:hover {
+ background-color: #3498DB;
+ cursor: pointer;
+ cursor: hand;
+}
+
 .box-icon span {
   color: #fff;
   display: table-cell;

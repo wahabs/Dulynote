@@ -15,18 +15,13 @@ App.Views.NoteEdit = Support.CompositeView.extend({
   events: {
     "submit #tag-form" : "submitNote",
     "change #notebook" : "submitNote",
-    "click label.btn" : "updateSticker"
+    "click button.sticker-choose" : "updateSticker"
   },
 
   updateSticker : function(event) {
-    var that = this;
-    that.model.set("sticker", $(event.currentTarget).find("input").val());
-    that.submitNote();
-    this.$("#stickerModal").modal("hide")
-    // $.when($("#stickerModal").modal("hide")).then(function() {
-    //   that.model.set("sticker", $(event.currentTarget).find("input").val());
-    //   that.submitNote();
-    // });
+    $('body').removeClass('modal-open');
+    this.model.set("sticker", $(event.currentTarget).find("input").val());
+    this.submitNote();
   },
 
   activateNote : function(id) {

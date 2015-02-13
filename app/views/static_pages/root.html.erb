@@ -24,6 +24,17 @@
       </div>
   </div>
 
+  <div id="root-demo" class="col-xs-6 col-xs-offset-6">
+
+    <form action="<%= session_url %>" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input class="form-control" type="hidden" name="user[email]" value='user@dulynote.com' id="user_email">
+      <input class="form-control" type="hidden" name="user[password]" value='vat9oryqbo0ater' id="user_password">
+      <input type="submit" class="btn btn-default" value="Try a demo!">
+    </form>
+
+  </div>
+
       <!-- About Section -->
   <hr>
   <section class="success" id="about">

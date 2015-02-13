@@ -1,4 +1,4 @@
-u1 = User.create!(email: 'user@example.com', password: 'password')
+u1 = User.create!(email: 'user@dulynote.com', password: 'vat9oryqbo0ater')
 
 nb1 = u1.notebooks.create!(title: "Notebook A")
 nb2 = u1.notebooks.create!(title: "Notebook B")

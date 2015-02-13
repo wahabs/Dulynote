@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   def brand_link
     if request.original_url == root_url && logged_in?
       "/main#"
-    elsif request.original_url != root_url
+    elsif request.original_url != root_url && logged_in?
       "#"
     else
       root_url

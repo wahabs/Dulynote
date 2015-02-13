@@ -8,7 +8,7 @@
       <li id="logo"><img src="<%= image_path("logo-inverted.png") %>" alt="Logo" style="width:40px;height:40px"></img></li>
     </ul>
 
-    <a class="navbar-brand" href=<%= logged_in? ? "#" : root_url %>>Dulynote</a>
+    <a class="navbar-brand" href=<%= brand_link %>>Dulynote</a>
 
       <ul class="nav navbar-nav navbar-right">
       <% if logged_in? %>

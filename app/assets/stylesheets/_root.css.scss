@@ -2,6 +2,23 @@
   margin-top: 80px;
 }
 
+.root-buttons-list {
+  list-style-type: none;
+  display: block;
+  margin: 0 auto;
+}
+
+.root-buttons-list > li {
+  margin: 40px 10px;
+}
+
+.root-buttons-list .btn {
+  text-align: left;
+  font-size: 20px;
+  width: 280px;
+  height: 54px;
+}
+
 #big-logo > img {
   display: block;
   margin: 0 auto;
@@ -9,4 +26,18 @@
 
 #root-note {
   margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+.root-note-body h3 {
+  font-size: 22px;
+}
+
+#root-buttons {
+  margin-top: 140px;
+}
+
+#btn-github, #btn-github:hover{
+  margin-top: -10px;
+  color: #3498DB;
 }

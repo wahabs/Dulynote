@@ -22,6 +22,7 @@
   },
 
   swapNoteFromCookie : function() {
+
     isNaN(parseInt($.cookie("activeNoteID"))) && $.cookie("activeNoteID", 1);
 
     var contentView = new App.Views.NoteEdit({

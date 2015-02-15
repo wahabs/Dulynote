@@ -1,8 +1,11 @@
-u1 = User.create!(email: 'user@dulynote.com', password: 'vat9oryqbo0ater')
+existing_demo_user = User.find_by(email: 'user@dulynote.com')
+existing_demo_user.destroy if existing_demo_user
 
-nb1 = u1.notebooks.create!(title: "Demo")
-nb2 = u1.notebooks.create!(title: "Programming Notes")
-nb3 = u1.notebooks.create!(title: "Stuff to Read")
+demo_user = User.create!(email: 'user@dulynote.com', password: 'vat9oryqbo0ater')
+
+nb1 = demo_user.notebooks.create!(title: "Demo")
+nb2 = demo_user.notebooks.create!(title: "Programming Notes")
+nb3 = demo_user.notebooks.create!(title: "Stuff to Read")
 
 n1 = nb1.notes.create!(
   title: "Hello.",
@@ -52,12 +55,13 @@ n8 = nb3.notes.create!(
   sticker: "moon-o"
 )
 
+notes = demo_user.notes
 
-t1 = u1.tags.create!(label: "Everything!")
-t1.note_ids = (1..(u1.notes.length)).to_a
+t1 = demo_user.tags.create!(label: "Everything!")
+t1.notes = notes
 
-t3 = u1.tags.create!(label: "Todo")
-t3.note_ids = [1,2,4]
+t2 = demo_user.tags.create!(label: "Todo")
+t2.notes = [notes[0], notes[1], notes[3]]
 
-t4 = u1.tags.create!(label: "Inspiration")
-t4.note_ids = [6,7]
+t3 = demo_user.tags.create!(label: "Inspiration")
+t3.notes = [notes[5], notes[6]]

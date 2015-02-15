@@ -1,8 +1,5 @@
 unless User.all.length > 1
 
-  existing_demo_user = User.find_by(email: 'user@dulynote.com')
-  existing_demo_user.destroy if existing_demo_user
-
   demo_user = User.create!(email: 'user@dulynote.com', password: 'vat9oryqbo0ater')
 
   nb1 = demo_user.notebooks.create!(title: "Demo")

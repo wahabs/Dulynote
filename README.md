@@ -5,6 +5,9 @@ primarily inspired by [Evernote](https://evernote.com/).
 
 You can check it out at http://www.dulynote.io/.
 
+![screenshot]
+
+
 ## Features
 
 Dulynote allows users to:
@@ -34,9 +37,10 @@ Plugins used:
 * Ability to show a note's related notes (i.e. notes with similar text content)
 * Support for multiple open sessions
 
-[site]: http://www.dulynote.io/
-
 ## License
-Dulynote is released under the [MIT License][license]
+Dulynote is released under the [MIT License.][license] Copyright (c) 2015 Wahab Sheikh.
 
+
+[site]: http://www.dulynote.io/
+[screenshot]: ./images/screenshot.png
 [license]: ./LICENSE

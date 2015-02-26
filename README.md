@@ -7,7 +7,6 @@ You can check it out at http://www.dulynote.io/.
 
 ![screenshot]
 
-
 ## Features
 
 Dulynote allows users to:
@@ -42,5 +41,5 @@ Dulynote is released under the [MIT License.][license] Copyright (c) 2015 Wahab 
 
 
 [site]: http://www.dulynote.io/
-[screenshot]: ./images/screenshot.png
+[screenshot]: ./app/assets/images/screenshot.png
 [license]: ./LICENSE

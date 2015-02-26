@@ -35,3 +35,8 @@ Plugins used:
 * Support for multiple open sessions
 
 [site]: http://www.dulynote.io/
+
+## License
+Dulynote is released under the [MIT License][license]
+
+[license]: ./LICENSE

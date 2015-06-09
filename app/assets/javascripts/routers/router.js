@@ -22,15 +22,12 @@
   },
 
   swapNoteFromCookie : function() {
-
     isNaN(parseInt($.cookie("activeNoteID"))) && $.cookie("activeNoteID", 1);
-
     var contentView = new App.Views.NoteEdit({
         model: new App.Models.Note(),
         notebooks: this.notebooks,
         tags: this.tags
     });
-
     this.swapView(contentView, "#content");
   },
 

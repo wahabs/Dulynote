@@ -20,8 +20,7 @@ Dulynote allows users to:
 
 ## Design
 
-From the user interface to the source code, Dulynote's philosophy is to be as lucid
-and minimalist as possible. The server-side API uses just three controllers – Notes, Tags, and Notebooks – and the processing of model relationships is handled on the client-side. Relying
+From the UI to the source code, Dulynote's philosophy is to be minimalist. The server-side API uses three controllers – Notes, Tags, and Notebooks – and the processing of model relationships is handled on the client-side. Relying
 heavily on Backbone [composite views](https://github.com/thoughtbot/backbone-support), Dulynote displays the interface for notes, notebooks, and tags on a single page. When one model-view is changed, the rest update accordingly.
 
 Plugins used:
@@ -37,7 +36,7 @@ Plugins used:
 * Support for multiple open sessions
 
 ## License
-Dulynote is released under the [MIT License.][license] Copyright (c) 2015 Wahab Sheikh.
+Dulynote is released under the [MIT License.][license]
 
 
 [site]: http://www.dulynote.io/

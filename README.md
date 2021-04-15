@@ -3,8 +3,6 @@
 [Dulynote][site] is a minimalist note taking app built on Rails and Backbone. It was
 primarily inspired by [Evernote](https://evernote.com/).
 
-You can check it out at http://www.dulynote.io/.
-
 ![screenshot]
 
 ## Features
